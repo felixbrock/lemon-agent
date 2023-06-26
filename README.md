@@ -2,7 +2,7 @@
 
 ## About
 
-Lemon AI Python Client. Craft internal co-pilots in a matter of minutes and execute highly efficient workflow automation by accessing internal tools like Airtable, Hubspot, Notion, or Salesforce. With Lemon AI, users can seamlessly grant their LLMs access to a wide range of APIs, creating co-pilots in minutes and unlocking the potential for streamlined, automated workflows.
+**Lemon AI Python Client. Craft internal co-pilots in a matter of minutes and execute highly efficient workflow automation by accessing internal tools like Airtable, Hubspot, Notion, or Salesforce. With Lemon AI, users can seamlessly grant their LLMs access to a wide range of APIs, creating co-pilots in minutes and unlocking the potential for streamlined, automated workflows.**
 
 ## Getting Started
 
