@@ -24,7 +24,7 @@ To use tools that require authentication, you have to store the corresponding ac
 
 ### Lemon AI Out-Of-The-Box Workflow Automation
 
-Get started in minutes, by giving access to relevant external tooling and defining a task. Lemon AI handles the rest by finding a combination of external tools to solve the given task. Example of retrieving user data from Hackernews and writing it to a table in Airtable:
+Get started in minutes by giving access to relevant tools and defining a task. Lemon AI handles the rest by finding a combination of relevant tools to solve the given task. Example of retrieving user data from Hackernews and writing it to a table in Airtable:
 
 ```python
 import os
