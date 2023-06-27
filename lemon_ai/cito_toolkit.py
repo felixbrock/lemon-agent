@@ -28,7 +28,7 @@ class CitoToolkit(BaseToolkit):
     def _get_workflows_from_file(tools_list: List[CitoTool], logger: Logger, session_id: str) -> List[CitoWorkflow]:
         workflows = []
 
-        with open("workflow.json", "r") as file:
+        with open("lemonai.json", "r") as file:
             data = json.load(file)
             tool_ids_list = [tool.id for tool in tools_list]
 
@@ -98,7 +98,7 @@ class CitoToolkit(BaseToolkit):
                         session_id=session_id
                     ))
         
-        if os.path.exists("workflow.json"):
+        if os.path.exists("lemonai.json"):
             workflows = cls._get_workflows_from_file(cito_tools, logger, session_id)
             cito_tools.extend(workflows)
 
