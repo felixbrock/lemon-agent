@@ -25,7 +25,7 @@ class CitoToolkit(BaseToolkit):
     
         return api_key, access_token
     
-    def _get_workflows_from_file(tools_list: List[CitoTool], logger: Logger, session_id: str) -> List[CitoWorkflow]:
+    def _get_workflows_from_file(tools_list: List[CitoTool]) -> List[CitoWorkflow]:
         workflows = []
 
         with open("lemonai.json", "r") as file:
@@ -51,8 +51,6 @@ class CitoToolkit(BaseToolkit):
                             name=item["name"],
                             description=CitoToolkit._build_workflow_description(item["name"], item["description"], tool_names),
                             tools=tools_objs,
-                            logger=logger,
-                            session_id=session_id
                     ))
 
         return workflows
@@ -99,7 +97,7 @@ class CitoToolkit(BaseToolkit):
                     ))
         
         if os.path.exists("lemonai.json"):
-            workflows = cls._get_workflows_from_file(cito_tools, logger, session_id)
+            workflows = cls._get_workflows_from_file(cito_tools)
             cito_tools.extend(workflows)
 
         return cls(tools=cito_tools)

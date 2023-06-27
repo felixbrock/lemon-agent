@@ -10,7 +10,7 @@ def execute_workflow(llm: BaseLLM, prompt_string: str):
 
     logfile_path = "output.log"
     logger.remove(handler_id=None)
-    logger.add(logfile_path, format="{time} - {extra[session_id]} - {extra[operation_name]} - {message}")
+    logger.add(logfile_path, format="{time} - {extra[session_id]} - {extra[operation_name]}")
 
     api_keys_dict, access_tokens_dict = get_apis_from_env()
     session_id = uuid.uuid4()
@@ -19,6 +19,8 @@ def execute_workflow(llm: BaseLLM, prompt_string: str):
     toolkit = CitoToolkit.from_cito_api_wrapper(cito_wrapper, api_keys_dict, access_tokens_dict, logger, str(session_id))
     tools = toolkit.get_tools()
 
+    prompt = f"Your task is '{prompt_string}'. Focus on the ordering of the tasks given. Do not use a workflow unless it is mentioned. Give your action input as a valid JSON object where the keys are the params and the values are the value for each input parameter. If a param is optional and you have not been given a value, do not include that field in the input. Your final answer should give a brief conversational overview of what you did."
+
     agent = initialize_agent(
         tools=tools,
         llm=llm,
@@ -26,12 +28,4 @@ def execute_workflow(llm: BaseLLM, prompt_string: str):
         verbose=True
     )
 
-    prompt = prompt_string + "Give your action input as a valid JSON object where the keys are the params \
-        and the values are the value for each input parameter. If a param is optional and you have not been given a value, \
-        do not include that field in the input. Your final answer should give a brief conversational overview of what you did \
-        and a description of the content of the result's values."
-    answer = agent.run(prompt)
-
-    logger.remove()
-    logger.add(logfile_path, format="{time} - {extra[session_id]} - {message}")
-    logger.bind(session_id=session_id).info(answer)
+    agent.run(prompt)
