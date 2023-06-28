@@ -102,7 +102,9 @@ model = OpenAI(temperature=0)
 execute_workflow(model=model, prompt_string=prompt)
 ```
 
-The console output should show the intermediate steps taken by the Langchain agent to execute your prompt as well as the final answer. There will also be an output.log file which will log all tools/workflows used in each session and the final result of execution.
+## Traceability
+
+To allow you to gain full transparency on how your model interacted with your Lemon AI tools to solve the given task, we are writing all decisions made, tools used and operations performed to a local output.log file.
 
 ```log
 2023-06-26T11:50:27.708785+0100 - b5f91c59-8487-45c2-800a-156eac0c7dae - HackerNews: Get User -
