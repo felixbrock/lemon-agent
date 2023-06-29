@@ -48,7 +48,7 @@ and "created_at_i". Please make sure that Airtable does NOT automatically conver
 # Initialise your model before passing it into the execute_workflow() function
 model = OpenAI(temperature=0)
 
-execute_workflow(model=model, prompt_string=prompt)
+execute_workflow(llm=model, prompt_string=prompt)
 ```
 
 It is crucial to ensure the parameters are specified in the prompt otherwise the execution will fail.
@@ -58,16 +58,12 @@ It is crucial to ensure the parameters are specified in the prompt otherwise the
 Similar to [OpenAI's functions](https://openai.com/blog/function-calling-and-other-api-updates), Lemon AI provides the option to define workflows as reusable functions. Specific workflows can be defined in a separate lemonai.json:
 
 ```json
-// lemonai.json
-
 [
   {
     "name": "Hackernews Airtable User Workflow",
     "description": "retrieves user data from Hackernews and appends it to a table in Airtable",
     "tools": ["hackernews-get-user", "airtable-append-data"]
   }
-
-  //...
 ]
 ```
 
@@ -99,7 +95,7 @@ table. Please make sure that Airtable does NOT automatically convert the field t
 # Initialise your model before passing it into the execute_workflow() function
 model = OpenAI(temperature=0)
 
-execute_workflow(model=model, prompt_string=prompt)
+execute_workflow(llm=model, prompt_string=prompt)
 ```
 
 ## Traceability
@@ -107,12 +103,10 @@ execute_workflow(model=model, prompt_string=prompt)
 To allow you to gain full transparency on how your model interacted with your Lemon AI tools to solve the given task, we are writing all decisions made, tools used and operations performed to a local output.log file.
 
 ```log
-2023-06-26T11:50:27.708785+0100 - b5f91c59-8487-45c2-800a-156eac0c7dae - HackerNews: Get User -
-2023-06-26T11:50:39.624035+0100 - b5f91c59-8487-45c2-800a-156eac0c7dae - Airtable: Append the data to a table -
-2023-06-26T11:50:45.792924+0100 - b5f91c59-8487-45c2-800a-156eac0c7dae - I read the user information for 'kimburgess' from Hackernews and wrote it to Airtable. The result was a record with the fields 'username', 'karma' and 'created_at_i' with the values 'kimburgess', 2454 and 1362302320 respectively.
-2023-06-26T11:58:32.925228+0100 - 5efe603c-9898-4143-b99a-55b50007ed9d - HackerNews: Get User -
-2023-06-26T11:58:43.988788+0100 - 5efe603c-9898-4143-b99a-55b50007ed9d - Airtable: Append the data to a table -
-2023-06-26T11:58:52.504537+0100 - 5efe603c-9898-4143-b99a-55b50007ed9d - I read the user information for 'kimburgess' from Hackernews and wrote it to Airtable. The result was a record with the fields 'username', 'karma' and 'created_at_i' with the values 'kimburgess', 2454 and 1362302320 respectively.
+2023-06-26T11:50:27.708785+0100 - b5f91c59-8487-45c2-800a-156eac0c7dae - HackerNews: Get User
+2023-06-26T11:50:39.624035+0100 - b5f91c59-8487-45c2-800a-156eac0c7dae - Airtable: Append the data to a table
+2023-06-26T11:58:32.925228+0100 - 5efe603c-9898-4143-b99a-55b50007ed9d - HackerNews: Get User
+2023-06-26T11:58:43.988788+0100 - 5efe603c-9898-4143-b99a-55b50007ed9d - Airtable: Append the data to a table
 ```
 
 ## Supported Tools
