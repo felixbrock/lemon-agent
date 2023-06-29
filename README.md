@@ -125,3 +125,80 @@ Below is a list of all supported tools by Lemon AI and their ids (for use in the
 - List all data from a table: airtable-list-data
 - Read data from a table: airtable-read-data
 - Update data in a table: airtable-update-data
+
+#### Slack:
+
+- Archive channel: slack-channel-archive
+- Close channel: slack-channel-close
+- Create channel: slack-channel-create
+- Get channel: slack-channel-get
+- Get many channels: slack-channel-get-many
+- Get channel history: slack-channel-history
+- Invite to channel: slack-channel-invite
+- Join channel: slack-channel-join
+- Kick from channel: slack-channel-kick
+- Leave channel: slack-channel-leave
+- Get channel members: slack-channel-member
+- Open channel: slack-channel-open
+- Rename channel: slack-channel-rename
+- Reply in channel: slack-channel-reply
+- Set channel purpose: slack-channel-set-purpose
+- Set channel topic: slack-channel-set-topic
+- Unarchive channel: slack-channel-unarchive
+- Get file: slack-file-get
+- Get many files: slack-file-get-many
+- Delete message: slack-message-delete
+- Get message permalink: slack-message-get-permalink
+- Search for message: slack-message-search
+- Send message: slack-message-send
+- Update message: slack-message-update
+- Add message reaction: slack-reaction-add
+- Get message reaction: slack-reaction-get
+- Remove message reaction: slack-reaction-remove
+- Add star: slack-star-add
+- Delete star: slack-star-delete
+- Get many stars: slack-star-get-many
+- Get user: slack-user-get
+- Get many users: slack-user-get-many
+- Get user's status: slack-user-get-status
+- Update user's profile: slack-user-update-profile
+- Create user group: slack-user-group-create
+- Disable user group: slack-user-group-disable
+- Enable user group: slack-user-group-enable
+- Get many user groups: slack-user-group-get-many
+- Update user group: slack-user-group-update
+
+#### HubSpot:
+
+- Create/Update a contact: hubspot-create-update-contact
+- Delete a contact: hubspot-delete-contact
+- Get a contact: hubspot-get-contact
+- Get all contacts: hubspot-get-all-contacts
+- Get recently created/updated contacts: hubspot-get-recently-created-updated-contacts
+- Search contacts: hubspot-search-contacts
+- Add contact to a list: hubspot-add-contact-to-list
+- Remove a contact from a list: hubspot-remove-contact-from-list
+- Create a company: hubspot-create-company
+- Delete a company: hubspot-delete-company
+- Get a company: hubspot-get-company
+- Get all companies: hubspot-get-all-companies
+- Get recently created companies: hubspot-get-recently-created-updated-companies
+- Search companies by domain: hubspot-search-companies-by-domain
+- Update a company: hubspot-update-company
+- Create a deal: hubspot-create-deal
+- Delete a deal: hubspot-delete-deal
+- Get a deal: hubspot-get-deal
+- Get all deals: hubspot-get-all-deals
+- Get recently created deals: hubspot-get-recently-created-updated-deals
+- Search deals: hubspot-search-deals
+- Update a deal: hubspot-update-deal
+- Create an engagement: hubspot-create-an-engagement
+- Delete an engagement: hubspot-delete-an-engagement
+- Get an engagement: hubspot-get-an-engagement
+- Get all engagements: hubspot-get-all-engagements
+- Get all fields from a form: hubspot-get-fields-form
+- Create a ticket: hubspot-create-ticket
+- Delete a ticket: hubspot-delete-ticket
+- Get a ticket: hubspot-get-ticket
+- Get all tickets: hubspot-get-all-tickets
+- Update a ticket: hubspot-update-ticket
