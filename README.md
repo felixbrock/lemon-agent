@@ -6,6 +6,8 @@
 
 ## Getting Started
 
+### Install the Lemon AI Client
+
 To use Lemon AI in your Python project just run:
 
 ```bash
@@ -19,6 +21,10 @@ The tool uses Python packages `langchain` and `loguru`. In the case of any insta
 Requires Python 3.8.1 and above.
 
 To use tools that require authentication, you have to store the corresponding access credentials in your environment in the format "{tool name}\_{authentication string}" where the authentication string is one of ["API_KEY", "SECRET_KEY", "SUBSCRIPTION_KEY", "ACCESS_KEY"] for API keys or ["ACCESS_TOKEN", "SECRET_TOKEN"] for authentication tokens. Examples are "OPENAI_API_KEY", "BING_SUBSCRIPTION_KEY", "AIRTABLE_ACCESS_TOKEN".
+
+### Spin Up the Lemon AI Server
+
+The interaction of your agents and all tools provided by Lemon AI is handled by the [Lemon AI Server](https://github.com/feliciori/lemonai-server). To use Lemon AI you need to run the server on your local machine so the Lemon AI Python client can connect to it.
 
 ## Features
 
