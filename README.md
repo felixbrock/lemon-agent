@@ -2,7 +2,7 @@
 
 ## About
 
-**Build powerful copilots in minutes and execute highly efficient workflow automations by accessing internal tools like Airtable, Hubspot, Notion and Salesforce. With Lemon AI, it is possible to seamlessly grant access to a wide range of APIs for read and write operations, creating copilots in minutes and unlocking the true potential of LLMs.**
+**The Python client to build powerful copilots in minutes and execute highly efficient workflow automations by accessing internal tools like Airtable, Hubspot, Slack or Github. With Lemon AI, it is possible to seamlessly grant access to a wide range of APIs for read and write operations, creating copilots in minutes and unlocking the true potential of LLMs.**
 
 ## Getting Started
 
@@ -106,7 +106,7 @@ execute_workflow(llm=model, prompt_string=prompt)
 
 ## Traceability
 
-To allow you to gain full transparency on how your model interacted with your Lemon AI tools to solve the given task, we are writing all decisions made, tools used and operations performed to a local output.log file.
+To allow you to gain full transparency on how your model interacted with your Lemon AI tools to solve the given task, we are writing all decisions made, tools used and operations performed to a local lemonai.log file. Every time your LLM agent is interacting with the Lemon AI tool stack a corresponding log entry is created.
 
 ```log
 2023-06-26T11:50:27.708785+0100 - b5f91c59-8487-45c2-800a-156eac0c7dae - HackerNews: Get User
@@ -115,16 +115,20 @@ To allow you to gain full transparency on how your model interacted with your Le
 2023-06-26T11:58:43.988788+0100 - 5efe603c-9898-4143-b99a-55b50007ed9d - Airtable: Append the data to a table
 ```
 
+By using the [Lemon AI Analytics Notebook](https://github.com/feliciori/lemonai-analytics) you can easily gain a better understanding on how frequently and in which workflow combination your tools are used. As a result you can identify weak spots in your agent's decision making capabilities and move to a more deterministic behaviour by defining [Lemon AI functions](#lemon-ai-functions---solve-tasks-based-on-predefined-workflows):
+
+![Heatmap Example](heatmap-example.png)
+
 ## Supported Tools
 
 Below is a list of all supported tools by Lemon AI and their ids (for use in the lemonai.json workflow file):
 
-#### HackerNews:
+### HackerNews
 
 - Get User: hackernews-get-user
 - Get Article: hackernews-get-article
 
-#### Airtable:
+### Airtable
 
 - Append data to a table: airtable-append-data
 - Delete data from a table: airtable-delete-data
@@ -132,7 +136,7 @@ Below is a list of all supported tools by Lemon AI and their ids (for use in the
 - Read data from a table: airtable-read-data
 - Update data in a table: airtable-update-data
 
-#### Slack:
+### Slack
 
 - Archive channel: slack-channel-archive
 - Close channel: slack-channel-close
@@ -174,7 +178,7 @@ Below is a list of all supported tools by Lemon AI and their ids (for use in the
 - Get many user groups: slack-user-group-get-many
 - Update user group: slack-user-group-update
 
-#### HubSpot:
+### HubSpot
 
 - Create/Update a contact: hubspot-create-update-contact
 - Delete a contact: hubspot-delete-contact
@@ -209,7 +213,7 @@ Below is a list of all supported tools by Lemon AI and their ids (for use in the
 - Get all tickets: hubspot-get-all-tickets
 - Update a ticket: hubspot-update-ticket
 
-#### Github:
+### Github
 
 - Create a new file in repository: github-file-create
 - Delete a file in repository: github-file-delete
@@ -237,3 +241,18 @@ Below is a list of all supported tools by Lemon AI and their ids (for use in the
 - Return the repositories of a user: github-user-repos
 - Invite a user to an organisation: github-user-org-invite
 - Return the repositories of an organisation: github-org-repos-get
+
+## ❤️‍🔥 Next Up ❤️‍🔥
+
+- [x] Github :tada:
+- [ ] Kafka
+- [ ] Pipedrive
+- [ ] Monday.com
+- [ ] Stripe
+- [ ] Medium
+- [ ] Discord
+- [ ] Gmail
+- [ ] Google Calendar
+- [ ] Google Cloud Realtime Database
+- [ ] Salesforce
+- [ ] Notion

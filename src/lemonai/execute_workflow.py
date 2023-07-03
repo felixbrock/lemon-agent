@@ -9,7 +9,7 @@ from lemonai.filter_tools import filter_tools
 
 def execute_workflow(llm: BaseLLM, prompt_string: str):
 
-    logfile_path = "output.log"
+    logfile_path = "lemonai.log"
     logger.remove(handler_id=None)
     logger.add(logfile_path, format="{time} - {extra[session_id]} - {extra[operation_name]}")
 
