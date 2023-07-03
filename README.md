@@ -1,4 +1,4 @@
-# 🍋 Lemon AI Python Client
+# 🍋 Lemon AI
 
 ## About
 
