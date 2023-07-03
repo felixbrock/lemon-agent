@@ -4,7 +4,7 @@
 
 **The Python client to build powerful copilots in minutes and execute highly efficient workflow automations by accessing internal tools like Airtable, Hubspot, Slack or Github. With Lemon AI, it is possible to seamlessly grant access to a wide range of APIs for read and write operations, creating copilots in minutes and unlocking the true potential of LLMs.**
 
-## Getting Started
+## 🖲️ Getting Started
 
 ### Install the Lemon AI Client
 
@@ -242,7 +242,7 @@ Below is a list of all supported tools by Lemon AI and their ids (for use in the
 - Invite a user to an organisation: github-user-org-invite
 - Return the repositories of an organisation: github-org-repos-get
 
-## ❤️‍🔥 Next Up ❤️‍🔥
+## ❤️‍🔥 Next Up
 
 - [x] Github :tada:
 - [ ] Kafka
