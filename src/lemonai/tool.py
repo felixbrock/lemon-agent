@@ -1,12 +1,12 @@
 from langchain.tools import BaseTool
 from pydantic import Field
-from lemon_ai.cito_api_wrapper import CitoAPIWrapper
+from lemonai.api_wrapper import APIWrapper
 from typing import Dict, Optional
 from loguru._logger import Logger
 
-class CitoTool(BaseTool):
+class Tool(BaseTool):
 
-    api_wrapper: CitoAPIWrapper = Field(default_factory=CitoAPIWrapper)
+    api_wrapper: APIWrapper = Field(default_factory=APIWrapper)
     id: str = ""
     name: str = ""
     description: str = ""
@@ -22,4 +22,4 @@ class CitoTool(BaseTool):
         return self.api_wrapper.run(self.id, action_input, self.params, self.api_key, self.access_token)
 
     async def _arun(self):
-        raise NotImplementedError("Cito Tool does not support async")
+        raise NotImplementedError(" Tool does not support async")

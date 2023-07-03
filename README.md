@@ -9,7 +9,7 @@
 To use Lemon AI in your Python project just run:
 
 ```bash
-pip install lemon-ai
+pip install lemonai
 ```
 
 This will install the corresponding Lemon AI client which you then can import into your script.
@@ -28,7 +28,7 @@ Get started in minutes by giving access to relevant tools and defining a task. L
 
 ```python
 import os
-from lemon_ai import execute_workflow
+from lemonai import execute_workflow
 from langchain import OpenAI
 
 # Make sure all API keys and access tokens are set in the environment
@@ -75,7 +75,7 @@ Users can ask the LLM to run a specific workflow for them:
 
 ```python
 import os
-from lemon_ai import execute_workflow
+from lemonai import execute_workflow
 from langchain import OpenAI
 
 # Make sure all API keys and access tokens are set in the environment

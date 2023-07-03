@@ -3,7 +3,7 @@ import requests
 from requests import Request, Session
 from typing import List, Dict, Optional
 
-class CitoAPIWrapper():
+class APIWrapper():
 
     api_base_url: str = "http://localhost:1313/api/v0/"
 

@@ -1,0 +1,26 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "lemonai"
+version = "0.0.4"
+authors = [
+  { name="Felix Brockmeier", email="fe.brockmeier@gmail.com" },
+]
+description = "Lemon AI's A Python client. Grant your LLM agents access to a wide range of APIs for read and write operations, creating copilots in minutes and unlocking the true potential of LLMs."
+readme = "README.md"
+requires-python = ">=3.8.1"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+  "langchain",
+  "loguru"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/feliciori/lemonai-py-client"
+"Bug Tracker" = "https://github.com/feliciori/lemonai-py-client/issues"
