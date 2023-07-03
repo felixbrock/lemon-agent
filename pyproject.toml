@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "lemonai"
-version = "0.0.4"
+version = "0.0.5"
 authors = [
   { name="Felix Brockmeier", email="fe.brockmeier@gmail.com" },
 ]
@@ -22,5 +22,5 @@ dependencies = [
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/feliciori/lemonai-py-client"
-"Bug Tracker" = "https://github.com/feliciori/lemonai-py-client/issues"
+"Homepage" = "https://github.com/felixbrock/lemonai-py-client"
+"Bug Tracker" = "https://github.com/felixbrock/lemonai-py-client/issues"
