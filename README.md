@@ -202,3 +202,32 @@ Below is a list of all supported tools by Lemon AI and their ids (for use in the
 - Get a ticket: hubspot-get-ticket
 - Get all tickets: hubspot-get-all-tickets
 - Update a ticket: hubspot-update-ticket
+
+#### Github:
+
+- Create a new file in repository: github-file-create
+- Delete a file in repository: github-file-delete
+- Edit a file in repository: github-file-edit
+- Get the data of a single file: github-file-get
+- Create a new issue: github-issue-create
+- Create a new comment on an issue: github-issue-comment
+- Edit an issue: github-issue-edit
+- Get the data of a single issue: github-issue-get
+- Lock an issue: github-issue-lock
+- Get the data of a single repository: github-repo-get
+- Return the contents of the repository's license file, if one is detected: github-repo-license
+- Return issues of a repository: github-repo-issues
+- Get the top 10 popular content paths over the last 14 days: github-repo-top-paths
+- Get the top 10 referring domains over the last 14 days: github-repo-top-domains
+- Create a new release: github-release-create
+- Get a release: github-release-get
+- Get all repository releases: github-release-get-all
+- Delete a release: github-release-delete
+- Update a release: github-release-update
+- Create a new review: github-review-create
+- Get a review for a pull request: github-review-get
+- Get all reviews for a pull request: github-review-get-all
+- Update a review: github-review-update
+- Return the repositories of a user: github-user-repos
+- Invite a user to an organisation: github-user-org-invite
+- Return the repositories of an organisation: github-org-repos-get
