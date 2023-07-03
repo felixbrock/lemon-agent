@@ -244,7 +244,7 @@ Below is a list of all supported tools by Lemon AI and their ids (for use in the
 
 ## ❤️‍🔥 Next Up
 
-- [x] Github :tada:
+- [x] Github
 - [ ] Kafka
 - [ ] Pipedrive
 - [ ] Monday.com
