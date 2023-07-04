@@ -14,9 +14,9 @@ To use Lemon AI in your Python project just run:
 pip install lemonai
 ```
 
-This will install the corresponding Lemon AI client which you then can import into your script.
+This will install the corresponding Lemon AI client which you can then import into your script.
 
-The tool uses Python packages `langchain` and `loguru`. In the case of any installation errors with Lemon AI, install both packages first and then install the Lemon AI package.
+The tool uses Python packages `langchain` and `loguru`. In case of any installation errors with Lemon AI, install both packages first and then install the Lemon AI package.
 
 Requires Python 3.8.1 and above.
 
@@ -121,7 +121,7 @@ By using the [Lemon AI Analytics Notebook](https://github.com/felixbrock/lemonai
 
 ## Supported Tools
 
-Below is a list of all supported tools by Lemon AI and their ids (for use in the lemonai.json workflow file):
+Below is a list of all tools supported by Lemon AI and their ids (for use in the lemonai.json workflow file):
 
 ### HackerNews
 
