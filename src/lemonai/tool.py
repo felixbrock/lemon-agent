@@ -18,7 +18,7 @@ class Tool(BaseTool):
 
     def _run(self, action_input: str) -> Dict:
         
-        self.logger.bind(session_id=self.session_id, operation_name=self.name).info("")
+        self.logger.bind(session_id=self.session_id, operation_name=self.id).info("")
         return self.api_wrapper.run(self.id, action_input, self.params, self.api_key, self.access_token)
 
     async def _arun(self):

@@ -121,7 +121,7 @@ To give full transparency on how your model interacts with Lemon AI tools to sol
 
 By using the [Lemon AI Analytics Notebook](https://github.com/felixbrock/lemonai-analytics) you can easily gain a better understanding of how frequently and in which workflow combination tools are used. As a result you can identify weak spots in your agent’s decision making capabilities and move to a more deterministic behaviour by defining [Lemon AI functions](#lemon-ai-functions---solve-tasks-based-on-predefined-workflows):
 
-![Heatmap Example](heatmap-example.png)
+![Heatmap Example](heatmap-example.gif)
 
 ## Supported Tools
 

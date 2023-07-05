@@ -1,7 +1,6 @@
 from langchain.tools import BaseTool
 from lemonai.tool import Tool
 from typing import List
-from loguru._logger import Logger
 
 class Workflow(BaseTool):
 
