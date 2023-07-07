@@ -4,7 +4,7 @@
 
 ## About
 
-**Build powerful AI assistants in minutes and execute highly efficient workflow automations by accessing tools like Airtable, Hubspot, Slack and Github.**
+**Build powerful AI assistants in minutes and execute highly efficient workflow automations by accessing tools like Airtable, Hubspot, Notion, Slack and Github.**
 
 Most connectors available today are focused on read-only operations, limiting the potential of LLMs. Agents, on the other hand, have a tendency to hallucinate from time to time due to missing context or instructions.
 
@@ -248,20 +248,39 @@ Below is a list of all tools supported by Lemon AI and their ids (for use in the
 - Invite a user to an organisation: github-user-org-invite
 - Return the repositories of an organisation: github-org-repos-get
 
+### Notion
+
+- Append block child: notion-append-after-block
+- Get block children: notion-get-child-blocks
+- Get database: notion-get-database
+- Get all databases: notion-get-many-database
+- Search database: notion-search-database
+- Create database page: notion-create-database-page
+- Get database page: notion-get-database-page
+- Get all database pages: notion-get-many-database-page
+- Update database page: notion-update-database-page
+- Archive page: notion-archive-page
+- Create page: notion-create-page
+- Search page: notion-search-page
+- Get user: notion-get-user
+- Get all users: notion-get-many-user
+
+
 ## ❤️‍🔥 Next Up
 
 - [x] Github
+- [x] Notion
+- [ ] Gmail
+- [ ] Google Calendar
 - [ ] Kafka
 - [ ] Pipedrive
 - [ ] Monday.com
 - [ ] Stripe
 - [ ] Medium
 - [ ] Discord
-- [ ] Gmail
-- [ ] Google Calendar
 - [ ] Google Cloud Realtime Database
 - [ ] Salesforce
-- [ ] Notion
+
 
 ## Contributing
 
