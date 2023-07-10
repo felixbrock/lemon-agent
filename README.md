@@ -14,7 +14,7 @@ With Lemon AI, it is possible to give your agents access to well-defined APIs fo
 
 ### Install the Lemon AI Client
 
-To use Lemon AI in your Python project just run:
+To use Lemon AI in your Python project just import the corresponding module:
 
 ```bash
 pip install lemonai
