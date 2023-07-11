@@ -26,7 +26,7 @@ The tool uses Python packages `langchain` and `loguru`. In case of any installat
 
 Requires Python 3.8.1 and above.
 
-To use tools that require authentication, you have to store the corresponding access credentials in your environment in the format "{tool name}\_{authentication string}" where the authentication string is one of ["API_KEY", "SECRET_KEY", "SUBSCRIPTION_KEY", "ACCESS_KEY"] for API keys or ["ACCESS_TOKEN", "SECRET_TOKEN"] for authentication tokens. Examples are "OPENAI_API_KEY", "BING_SUBSCRIPTION_KEY", "AIRTABLE_ACCESS_TOKEN".
+To use tools that require authentication, you have to store the corresponding access credentials in your environment in the format "{tool name}\_{authentication string}" where the authentication string is one of ["API_KEY", "SECRET_KEY", "SUBSCRIPTION_KEY", "ACCESS_KEY"] for API keys, ["ACCESS_TOKEN", "SECRET_TOKEN"] for authentication tokens, or "WEBHOOK_URL" for Webhook URLs. Examples are "OPENAI_API_KEY", "BING_SUBSCRIPTION_KEY", "AIRTABLE_ACCESS_TOKEN", "DISCORD_WEBHOOK_URL".
 
 ### Spin Up the Lemon AI Server
 
@@ -265,11 +265,16 @@ Below is a list of all tools supported by Lemon AI and their ids (for use in the
 - Get user: notion-get-user
 - Get all users: notion-get-many-user
 
+### Discord
+
+- Send message in channel: discord-message-send
+
 
 ## ❤️‍🔥 Next Up
 
 - [x] Github
 - [x] Notion
+- [x] Discord
 - [ ] Gmail
 - [ ] Google Calendar
 - [ ] Kafka
@@ -277,7 +282,6 @@ Below is a list of all tools supported by Lemon AI and their ids (for use in the
 - [ ] Monday.com
 - [ ] Stripe
 - [ ] Medium
-- [ ] Discord
 - [ ] Google Cloud Realtime Database
 - [ ] Salesforce
 
