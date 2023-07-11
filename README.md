@@ -264,4 +264,4 @@ Below is a list of all tools supported by Lemon AI and their ids (those need to 
 
 ## Contributing
 
-Great to see you here 🫶 We are extremely open to contributions! You can find more information in our [CONTRIBUTING.md](https://github.com/felixbrock/master/.github/CONTRIBUTING.md).
+Great to see you here 🫶 We are extremely open to contributions! You can find more information in our [CONTRIBUTING.md](https://github.com/felixbrock/lemonai-py-client/blob/main/.github/CONTRIBUTING.md).
