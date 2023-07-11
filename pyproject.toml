@@ -18,7 +18,8 @@ classifiers = [
 ]
 dependencies = [
   "langchain",
-  "loguru"
+  "loguru",
+  "openai"
 ]
 
 [project.urls]
