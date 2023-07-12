@@ -70,6 +70,10 @@ os.environ["AIRTABLE_ACCESS_TOKEN"] = "*INSERT AIRTABLE TOKEN HERE*"
 
 ```Python
 hackernews_username = "*INSERT HACKERNEWS USERNAME HERE*"
+"""
+Guidelines on identifying Airtable ids here:
+https://www.highviewapps.com/kb/where-can-i-find-the-airtable-base-id-and-table-id/
+"""
 airtable_base_id = "*INSERT BASE ID HERE*"
 airtable_table_id = "*INSERT TABLE ID HERE*"
 
