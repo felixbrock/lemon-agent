@@ -56,8 +56,6 @@ from lemonai import execute_workflow
 from langchain import OpenAI
 ```
 
-Please note that this example is making use of one of OpenAI's LLM models. For Langchain to successfully communicate with OpenAI you need to run `pip install openai`, which installs the necessary OpenAI Python module.
-
 #### Load API Keys and Access Tokens
 
 To use tools that require authentication, you have to store the corresponding access credentials in your environment in the format "{tool name}\_{authentication string}" where the authentication string is one of ["API_KEY", "SECRET_KEY", "SUBSCRIPTION_KEY", "ACCESS_KEY"] for API keys or ["ACCESS_TOKEN", "SECRET_TOKEN"] for authentication tokens. Examples are "OPENAI_API_KEY", "BING_SUBSCRIPTION_KEY", "AIRTABLE_ACCESS_TOKEN".
