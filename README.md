@@ -107,6 +107,10 @@ By using the [Lemon AI Analytics Tool](https://github.com/felixbrock/lemonai-ana
 
 ![Heatmap Example](heatmap-example.png)
 
+## Community
+
+[Join our discord community](https://discord.gg/EBbZkCqT) to connect with other Lemon AI developers, ask questions, get support, and stay updated with the latest news and announcements!
+
 ## Supported Tools
 
 Below is a list of all tools supported by Lemon AI and their ids (those need to be used in the lemonai.json file to define functions):
