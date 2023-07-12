@@ -2,7 +2,7 @@
 
 ![Heatmap Example](heatmap-example.gif)
 
-## About
+## 🔗🍋 About
 
 **Lemon AI helps you build powerful AI assistants in minutes and automate workflows by allowing for accurate and reliable read and write operations in tools like Airtable, Hubspot, Discord, Notion, Slack and Github.**
 
@@ -10,7 +10,7 @@ Most connectors available today are focused on read-only operations, limiting th
 
 With Lemon AI, it is possible to give your agents access to well-defined APIs for reliable read and write operations. In addition, Lemon AI functions allow you to further reduce the risk of hallucinations by providing a way to statically define workflows that the model can rely on in case of uncertainty.
 
-## Quick Start
+## ⚡️ Quick Start
 
 The following quick start demonstrates how to use Lemon AI in combination with Agents to automate workflows that involve interaction with internal tooling.
 
@@ -107,11 +107,11 @@ By using the [Lemon AI Analytics Tool](https://github.com/felixbrock/lemonai-ana
 
 ![Heatmap Example](heatmap-example.png)
 
-## Community
+## 👥 Community
 
 [Join our discord community](https://discord.gg/EBbZkCqT) to connect with other Lemon AI developers, ask questions, get support, and stay updated with the latest news and announcements!
 
-## Supported Tools
+## 🧩 Supported Tools
 
 Below is a list of all tools supported by Lemon AI and their ids (those need to be used in the lemonai.json file to define functions):
 
@@ -255,7 +255,7 @@ Below is a list of all tools supported by Lemon AI and their ids (those need to 
 
 - Send message in channel: discord-message-send
 
-## ❤️‍🔥 Next Up
+## 🏎️ Next Up
 
 - [x] Github
 - [x] Notion
@@ -270,6 +270,6 @@ Below is a list of all tools supported by Lemon AI and their ids (those need to 
 - [ ] Google Cloud Realtime Database
 - [ ] Salesforce
 
-## Contributing
+## 🔥 Contributing
 
 Great to see you here 🫶 We are extremely open to contributions! You can find more information in our [CONTRIBUTING.md](https://github.com/felixbrock/lemonai-py-client/blob/main/.github/CONTRIBUTING.md).
