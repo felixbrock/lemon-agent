@@ -153,16 +153,7 @@ We already allow agents to interact with over [120 tools](https://github.com/fel
 
 Great to see you here! We are extremely open to contributions! You can find more information in our [CONTRIBUTING.md](https://github.com/felixbrock/lemonai-py-client/blob/main/.github/CONTRIBUTING.md). If you have any more questions feel free to drop us a message on <a href="https://discord.gg/bsgzjEpw">Discord</a>.
 
-## ❤️‍🔥 Team
-
-<table cellspacing="0" cellpadding="0" style="border:none;">
-  <tr style="border:none;">
-    <td align="center" style="border:none;"><a href="https://twitter.com/felixbrockm"><img src="https://avatars.githubusercontent.com/u/70200999?s=100&v=4" style="border-radius: 50%;" width="100px;" alt=""/><br /><sub><b>Felix</b></sub></a></td>
-    <td style="border:none;">Hey there 🥳 I am Felix and I am building Lemon AI. Always happy to chat and answer any questions you might have! Feel free to reachout on <a href="https://twitter.com/felixbrockm">Twitter</a> or <a href="mailto:fe.brockmeier@gmail.com">Email</a> </td>
-  </tr>
-</table>
-
-### Active Contributors
+## ❤️‍🔥 Acknowledgements
 
 > Team members and people who actively help out improving the codebase by making PRs and reviewing code.
 
@@ -172,6 +163,7 @@ Great to see you here! We are extremely open to contributions! You can find more
       <td align="center" style="border:none;"><a href="https://www.linkedin.com/in/mohammed-abdus-samad-hannan-3a2687202/"><img src="https://avatars.githubusercontent.com/u/72310364?s=100&v=4" width="70px;" alt="" style="border-radius: 50%;"/><br /><sub><b>Mohammed Hannan</b></sub></a></td>
       <td align="center" style="border:none;"><a href="https://www.linkedin.com/in/haiphunghiem/"><img src="https://avatars.githubusercontent.com/u/16231195?s=100&v=4" width="70px;" alt="" style="border-radius: 50%;"/><br /><sub><b>Hai Nghiem</b></sub></a></td>
       <td align="center" style="border:none;"><a href="https://twitter.com/schroeerclemens"><img src="https://avatars.githubusercontent.com/u/84038864?s=100&v=4" width="70px;" alt="" style="border-radius: 50%;"/><br /><sub><b>Clemens Schroeer</b></sub></a></td>
+      <td align="center" style="border:none;"><a href="https://twitter.com/felixbrockm"><img src="https://avatars.githubusercontent.com/u/70200999?s=100&v=4" width="70px;" alt="" style="border-radius: 50%;"/><br /><sub><b>Felix Brockmeier</b></sub></a></td>
     </tr>
   </tbody>
 </table>
