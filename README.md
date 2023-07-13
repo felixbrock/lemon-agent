@@ -107,7 +107,7 @@ Similar to [OpenAI functions](https://openai.com/blog/function-calling-and-other
 
 Your model will have access to these functions and will prefer them over self-selecting tools to solve a given task. All you have to do is to let the agent know that it should use a given function by including the function name in the prompt (e.g. `prompt = f"""Execute the Hackernews Airtable user workflow...`).
 
-### 4. Gain transparency on your Agent's decision making
+### 5. Gain transparency on your Agent's decision making
 
 To gain transparency on how your Agent interacts with Lemon AI tools to solve a given task, all decisions made, tools used and operations performed are written to a local `lemonai.log` file. Every time your LLM agent is interacting with the Lemon AI tool stack a corresponding log entry is created:
 
