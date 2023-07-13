@@ -48,6 +48,14 @@ Similar to [OpenAI functions](https://openai.com/blog/function-calling-and-other
 
 Your model will have access to these functions and will prefer them over self-selecting tools to solve a given task. All you have to do is to let the agent know that it should use a given function by including the function name in the prompt.
 
+#### Install LLM provider's dependencies
+
+The following example uses OpenAI's API to operate the workflow, so before you start, install `openai` dependency with `pip`:
+
+```bash
+pip install openai
+```
+
 #### Include Lemon AI in your Langchain project
 
 ```Python
