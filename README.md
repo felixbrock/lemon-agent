@@ -8,7 +8,7 @@
     <img alt="Twitter" src="https://img.shields.io/badge/Tweet at us-x?style=flat&logo=twitter&logoColor=white&label&labelColor=gray&color=1DA1F2">
   </a>
   <a href="https://github.com/trpc/trpc/blob/main/LICENSE">
-    <img alt="MIT License" src="https://img.shields.io/github/license/felixbrock/lemonai-py-client?labelColor=gray&color=yellow" />
+    <img alt="MIT License" src="https://img.shields.io/github/license/felixbrock/lemonai?labelColor=gray&color=yellow" />
   </a>
   <br />
     <a href="https://python.langchain.com/docs/modules/agents/tools/integrations/lemonai">
@@ -93,7 +93,7 @@ execute_workflow(llm=model, prompt_string=prompt)
 
 #### (Optional) Define your Lemon AI Functions
 
-Similar to [OpenAI functions](https://openai.com/blog/function-calling-and-other-api-updates), Lemon AI provides the option to define workflows as reusable functions. These functions can be defined for use cases where it is especially important to move as close as possible to near-deterministic behavior. Specific workflows can be defined in a separate lemonai.json. You can find the corresponding tool ids (e.g. `hackernews-get-user`) in the [Tool Docs](https://github.com/felixbrock/lemonai-py-client/blob/main/docs/tools.md):
+Similar to [OpenAI functions](https://openai.com/blog/function-calling-and-other-api-updates), Lemon AI provides the option to define workflows as reusable functions. These functions can be defined for use cases where it is especially important to move as close as possible to near-deterministic behavior. Specific workflows can be defined in a separate lemonai.json. You can find the corresponding tool ids (e.g. `hackernews-get-user`) in the [Tool Docs](https://github.com/felixbrock/lemonai/blob/main/docs/tools.md):
 
 ```json
 [
@@ -124,7 +124,7 @@ By using the [Lemon AI Analytics Tool](https://github.com/felixbrock/lemonai-ana
 
 ## 🧩 Supported Tools
 
-We already allow agents to interact with over [120 tools](https://github.com/felixbrock/lemonai-py-client/blob/main/docs/tools.md) across the following services:
+We already allow agents to interact with over [120 tools](https://github.com/felixbrock/lemonai/blob/main/docs/tools.md) across the following services:
 
 - HackerNews
 - Airtable
@@ -151,7 +151,7 @@ We already allow agents to interact with over [120 tools](https://github.com/fel
 
 ## 🦸 Contributing
 
-Great to see you here! We are extremely open to contributions! You can find more information in our [CONTRIBUTING.md](https://github.com/felixbrock/lemonai-py-client/blob/main/.github/CONTRIBUTING.md). If you have any more questions feel free to drop us a message on <a href="https://discord.gg/bsgzjEpw">Discord</a>.
+Great to see you here! We are extremely open to contributions! You can find more information in our [CONTRIBUTING.md](https://github.com/felixbrock/lemonai/blob/main/.github/CONTRIBUTING.md). If you have any more questions feel free to drop us a message on <a href="https://discord.gg/bsgzjEpw">Discord</a>.
 
 ## ❤️‍🔥 Contributors
 
