@@ -153,9 +153,9 @@ We already allow agents to interact with over [120 tools](https://github.com/fel
 
 Great to see you here! We are extremely open to contributions! You can find more information in our [CONTRIBUTING.md](https://github.com/felixbrock/lemonai-py-client/blob/main/.github/CONTRIBUTING.md). If you have any more questions feel free to drop us a message on <a href="https://discord.gg/bsgzjEpw">Discord</a>.
 
-## ❤️‍🔥 Acknowledgements
+## ❤️‍🔥 Contributors
 
-> Team members and people who actively help out improving the codebase by making PRs and reviewing code.
+> Those are the team members and people who actively help out improving the codebase by making PRs and reviewing code. We are beyond grateful for your help!
 
 <table cellspacing="0" cellpadding="0" style="border:none;">
   <tbody>
