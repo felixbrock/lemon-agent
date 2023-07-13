@@ -83,7 +83,13 @@ In addition to Lemon AI's common set of tools, those workflow functions will als
 
 Please make sure to provide a proper workflow 'description' and provide the 'tools' in the right order to allow the correct execution of the workflow '['tool to be used first', ...]'.
 
-Users can ask the LLM to run a specific workflow for them:
+The following example uses OpenAI's API to operate the workflow, so before you start, install `openai` dependency with `pip`:
+
+```bash
+pip install openai
+```
+
+Now you can ask the LLM to run a specific workflow:
 
 ```python
 import os
