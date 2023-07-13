@@ -3,9 +3,13 @@ import requests
 from requests import Request, Session
 from typing import List, Dict, Optional
 
-class APIWrapper():
+class APIWrapper:
 
-    api_base_url: str = "http://localhost:1313/api/v0/"
+    api_base_url: str
+
+    def __init__(self, api_domain: Optional[str] = None):
+        self.api_base_url = f"{api_domain if api_domain else 'https://bfyvsp3cwepesc7dxd2yuzkyyi0nmcye.lambda-url.eu-central-1.on.aws'}/api/v0"
+
 
     def _get_session(self) -> Session:
         
@@ -22,7 +26,7 @@ class APIWrapper():
     def get_tool_list(self) -> List[Dict]:
 
         session = self._get_session()
-        url = f"{self.api_base_url}tools"
+        url = f"{self.api_base_url}/tools"
         response = session.get(url)
         response.raise_for_status()
 
@@ -41,7 +45,7 @@ class APIWrapper():
 
         return Request(
             method="POST",
-            url=f"{self.api_base_url}tool/{id}/execute",
+            url=f"{self.api_base_url}/tool/{id}/execute",
             json=data,
         )
 

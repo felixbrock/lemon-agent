@@ -6,8 +6,10 @@ from lemonai.get_integrations import get_apis_from_env
 from lemonai.api_wrapper import APIWrapper
 from lemonai.toolkit import Toolkit
 from lemonai.filter_tools import filter_tools
+from typing import Optional
 
-def execute_workflow(llm: BaseLLM, prompt_string: str):
+
+def execute_workflow(llm: BaseLLM, prompt_string: str, api_domain: Optional[str] = None):
 
     logfile_path = "lemonai.log"
     logger.remove(handler_id=None)
@@ -16,7 +18,7 @@ def execute_workflow(llm: BaseLLM, prompt_string: str):
     api_keys_dict, access_tokens_dict = get_apis_from_env()
     session_id = uuid.uuid4()
 
-    _wrapper = APIWrapper()
+    _wrapper = APIWrapper(api_domain)
     toolkit = Toolkit.from_api_wrapper(_wrapper, api_keys_dict, access_tokens_dict, logger, str(session_id))
     tools = toolkit.get_tools()
 
