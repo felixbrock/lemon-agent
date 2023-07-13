@@ -5,7 +5,7 @@
 <img alt="Discord" src="https://img.shields.io/badge/Join Discord-x?style=flat&logo=discord&logoColor=white&label&labelColor=gray&color=5865F2">
   </a>
   <a href="https://twitter.com/getlemonai">
-    <img alt="Twitter" src="https://img.shields.io/badge/Follow Twitter-x?style=flat&logo=twitter&logoColor=white&label&labelColor=gray&color=1DA1F2">
+    <img alt="Twitter" src="https://img.shields.io/badge/Tweet at us-x?style=flat&logo=twitter&logoColor=white&label&labelColor=gray&color=1DA1F2">
   </a>
   <a href="https://github.com/trpc/trpc/blob/main/LICENSE">
     <img alt="MIT License" src="https://img.shields.io/github/license/felixbrock/lemonai-py-client?labelColor=gray&color=yellow" />
@@ -160,10 +160,10 @@ Great to see you here! We are extremely open to contributions! You can find more
 <table cellspacing="0" cellpadding="0" style="border:none;">
   <tbody>
     <tr style="border:none;">
+      <td align="center" style="border:none;"><a href="https://twitter.com/felixbrockm"><img src="https://avatars.githubusercontent.com/u/70200999?s=100&v=4" width="70px;" alt="" style="border-radius: 50%;"/><br /><sub><b>Felix Brockmeier</b></sub></a></td>
       <td align="center" style="border:none;"><a href="https://www.linkedin.com/in/mohammed-abdus-samad-hannan-3a2687202/"><img src="https://avatars.githubusercontent.com/u/72310364?s=100&v=4" width="70px;" alt="" style="border-radius: 50%;"/><br /><sub><b>Mohammed Hannan</b></sub></a></td>
       <td align="center" style="border:none;"><a href="https://www.linkedin.com/in/haiphunghiem/"><img src="https://avatars.githubusercontent.com/u/16231195?s=100&v=4" width="70px;" alt="" style="border-radius: 50%;"/><br /><sub><b>Hai Nghiem</b></sub></a></td>
       <td align="center" style="border:none;"><a href="https://twitter.com/schroeerclemens"><img src="https://avatars.githubusercontent.com/u/84038864?s=100&v=4" width="70px;" alt="" style="border-radius: 50%;"/><br /><sub><b>Clemens Schroeer</b></sub></a></td>
-      <td align="center" style="border:none;"><a href="https://twitter.com/felixbrockm"><img src="https://avatars.githubusercontent.com/u/70200999?s=100&v=4" width="70px;" alt="" style="border-radius: 50%;"/><br /><sub><b>Felix Brockmeier</b></sub></a></td>
     </tr>
   </tbody>
 </table>
