@@ -27,6 +27,14 @@ Most connectors available today are focused on read-only operations, limiting th
 
 With Lemon AI, it is possible to give your agents access to well-defined APIs for reliable read and write operations. In addition, Lemon AI functions allow you to further reduce the risk of hallucinations by providing a way to statically define workflows that the model can rely on in case of uncertainty.
 
+This readme covers:
+
+- [⚡ Getting Started](#⚡️-getting-started)
+- [🧩 Supported Tools](#🧩-supported-tools)
+- [🩻 Next Up](#🩻-next-up)
+- [🦸 Contributing](#🦸-contributing)
+- [❤️‍🔥 Contributors](#❤️‍🔥-contributors)
+
 ## ⚡️ Getting Started
 
 ### 1. Prerequisites
