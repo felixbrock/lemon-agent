@@ -71,25 +71,23 @@ To use tools that require authentication, you have to store the corresponding ac
 ```Python
 """ Load all relevant API Keys and Access Tokens into your environment variables """
 os.environ["OPENAI_API_KEY"] = "*INSERT OPENAI API KEY HERE*"
-os.environ["AIRTABLE_ACCESS_TOKEN"] = "*INSERT AIRTABLE TOKEN HERE*"
+os.environ["GITHUB_API_KEY"] = "*INSERT GITHUB API KEY HERE*"
+os.environ["DISCORD_WEBHOOK_URL"] = "*INSERT DISCORD CHANNEL WEBHOOK URL HERE*"
 ```
 
 #### Define your prompt and execute the Langchain Agent
 
 ```Python
-hackernews_username = "*INSERT HACKERNEWS USERNAME HERE*"
-"""
-Guidelines on identifying Airtable ids here:
-https://www.highviewapps.com/kb/where-can-i-find-the-airtable-base-id-and-table-id/
-"""
-airtable_base_id = "*INSERT BASE ID HERE*"
-airtable_table_id = "*INSERT TABLE ID HERE*"
+lemonai_repo_owner = "felixbrock"
+github_username = "Abdus2609"
 
 """ Define your instruction to be given to your LLM """
-prompt = f"""Read information from Hackernews for user {hackernews_username} and then write the results to
-Airtable (baseId: {airtable_base_id}, tableId: {airtable_table_id}). Only write the fields "username", "karma"
-and "created_at_i". Please make sure that Airtable does NOT automatically convert the field types.
-"""
+prompt = f"""Get the description for a repository I am working with called lemonai (owner {lemonai_repo_owner}). 
+Also, get my top growing starred repositories (useername {github_username}). Analyse the descriptions of both 
+the LemonAI repository and my top starred repositories. Then, send a Discord message that firstly displays a 
+numerically bullet pointed leaderboard of the top growing starred repositories and their growth, and secondly 
+discusses how each tool could be useful specifically to lemonai's use case based on your analysis of the 
+descriptions of each repository."""
 
 """
 Use the Lemon AI execute_workflow wrapper
@@ -99,6 +97,10 @@ model = OpenAI(temperature=0)
 
 execute_workflow(llm=model, prompt_string=prompt)
 ```
+
+What this example will achieve is a workflow of the following:
+
+Get LemonAI repository details > Get top growing starred repositories > Send Discord message with results and review 
 
 ### 4. Gain transparency on your Agent's decision making
 
@@ -241,6 +243,7 @@ Below is a list of all tools supported by Lemon AI and their ids (those need to 
 - Return the repositories of a user: github-user-repos
 - Invite a user to an organisation: github-user-org-invite
 - Return the repositories of an organisation: github-org-repos-get
+- Get the top growing starred repositories of a user: github-user-get-star-growth
 
 ### Notion
 

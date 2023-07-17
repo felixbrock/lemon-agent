@@ -16,11 +16,11 @@ def execute_workflow(llm: BaseLLM, prompt_string: str):
     api_keys_dict, access_tokens_dict = get_apis_from_env()
     session_id = uuid.uuid4()
 
-    _wrapper = APIWrapper()
+    _wrapper = APIWrapper(llm, task=prompt_string)
     toolkit = Toolkit.from_api_wrapper(_wrapper, api_keys_dict, access_tokens_dict, logger, str(session_id))
     tools = toolkit.get_tools()
 
-    prompt = f"Your task is '{prompt_string}'. Focus on the ordering of the tasks given. Do not use a workflow unless it is mentioned. Give your action input as a valid JSON object where the keys are the params and the values are the value for each input parameter. The description of the tool may provide the JSON structure of the action input using round brackets () instead of curly brackets. Follow this structure for your action input. Your final answer should give a brief conversational overview of what you did."    
+    prompt = f"Your task is '{prompt_string}'. Focus on the ordering of the tasks given. Do not use a workflow unless it is mentioned. Your action input should be a valid JSON object where the keys are the params and the values are the value for each input parameter. The description of the tool may provide the JSON structure of the action input using round brackets () instead of curly brackets. Follow this structure for your action input. Ensure all strings in the action input are valid and terminated correctly. Your final answer should give a brief conversational overview of what you did."    
     filtered_tools = filter_tools(llm=llm, task=prompt_string, tools=tools)
     
     agent = initialize_agent(
