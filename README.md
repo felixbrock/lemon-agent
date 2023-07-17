@@ -77,7 +77,7 @@ The following example makes use of several Lemon AI tools to
 ![Use Case Example](use-case-example.png)
 
 ```Python
-lemonai_repo_owner = "felixbrock"
+lemonai_repo_owner = "Abdus2609"
 github_username = "Abdus2609"
 
 """ Define your instruction to be given to your LLM """
