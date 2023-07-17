@@ -45,7 +45,7 @@ Requires Python 3.8.1 and above.
 
 To use Lemon AI in your Python project run `pip install lemonai`. The following example uses an OpenAI model. Therefore, we also need to `pip install openai`. Depending on which model you want to use this install is optional.
 
-### 3. (Optional) Launch the Server
+### 3. (Optional) Launch the server
 
 The interaction of your agents and all Lemon AI tools is provided by the [Lemon AI Server](https://github.com/felixbrock/lemonai-server). Per default the Lemon AI Python client is sending requests to a hosted server version. To run the Lemon AI server on-prem please refer to the [Server Documentation](https://github.com/felixbrock/lemonai-server).
 
@@ -63,32 +63,38 @@ from lemonai import execute_workflow
 from langchain import OpenAI
 ```
 
-#### Load API Keys and Access Tokens
+#### Load API keys and access tokens
 
 To use tools that require authentication, you have to store the corresponding access credentials in your environment in the format "{tool name}\_{authentication string}" where the authentication string is one of ["API_KEY", "SECRET_KEY", "SUBSCRIPTION_KEY", "ACCESS_KEY"] for API keys or ["ACCESS_TOKEN", "SECRET_TOKEN"] for authentication tokens. Examples are "OPENAI_API_KEY", "BING_SUBSCRIPTION_KEY", "AIRTABLE_ACCESS_TOKEN".
 
 ```Python
 """ Load all relevant API Keys and Access Tokens into your environment variables """
 os.environ["OPENAI_API_KEY"] = "*INSERT OPENAI API KEY HERE*"
-os.environ["AIRTABLE_ACCESS_TOKEN"] = "*INSERT AIRTABLE TOKEN HERE*"
+os.environ["GITHUB_API_KEY"] = "*INSERT GITHUB API KEY HERE*"
+os.environ["DISCORD_WEBHOOK_URL"] = "*INSERT DISCORD CHANNEL WEBHOOK URL HERE*"
 ```
 
-#### Define your prompt and execute the LangChain Agent
+#### Example of defining your prompt and executing the Langchain Agent
+
+The following example makes use of several Lemon AI tools to
+
+1. Retrieve details about a personal repository on GitHub
+2. Get the top growing starred repositories of my account
+3. Send a Discord message with results and review.
+
+![Use Case Example](use-case-example.png)
 
 ```Python
-hackernews_username = "*INSERT HACKERNEWS USERNAME HERE*"
-"""
-Guidelines on identifying Airtable ids here:
-https://www.highviewapps.com/kb/where-can-i-find-the-airtable-base-id-and-table-id/
-"""
-airtable_base_id = "*INSERT BASE ID HERE*"
-airtable_table_id = "*INSERT TABLE ID HERE*"
+lemonai_repo_owner = "felixbrock"
+github_username = "Abdus2609"
 
 """ Define your instruction to be given to your LLM """
-prompt = f"""Read information from Hackernews for user {hackernews_username} and then write the results to
-Airtable (baseId: {airtable_base_id}, tableId: {airtable_table_id}). Only write the fields "username", "karma"
-and "created_at_i". Please make sure that Airtable does NOT automatically convert the field types.
-"""
+prompt = f"""Get the description for a repository I am working with called lemonai (owner {lemonai_repo_owner}).
+Also, get my top growing starred repositories (username {github_username}). Analyze the descriptions of both
+the LemonAI repository and my top-starred repositories. Then, send a Discord message that first displays a
+numerically bullet-pointed leaderboard of the top growing starred repositories and their growth, and secondly
+discuss how each tool could be useful specifically to lemonai's use case based on your analysis of the
+descriptions of each repository."""
 
 """
 Use the Lemon AI execute_workflow wrapper
