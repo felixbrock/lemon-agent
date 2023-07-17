@@ -8,16 +8,14 @@ class APIWrapper:
 
     api_base_url: str
 
-    def __init__(self, api_domain: Optional[str] = None):
+    def __init__(self, llm: BaseLLM, task: str, api_domain: Optional[str] = None):
         self.api_base_url = f"{api_domain if api_domain else 'https://bfyvsp3cwepesc7dxd2yuzkyyi0nmcye.lambda-url.eu-central-1.on.aws'}/api/v0"
+        self._llm = llm
+        self._task = task
 
     api_base_url: str = "http://localhost:1313/api/v0/"
     _llm: BaseLLM
     _task: str
-
-    def __init__(self, llm: BaseLLM, task: str):
-        self._llm = llm
-        self._task = task
 
     def _get_session(self) -> Session:
         

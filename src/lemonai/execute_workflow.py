@@ -18,7 +18,7 @@ def execute_workflow(llm: BaseLLM, prompt_string: str, server_domain: Optional[s
     api_keys_dict, access_tokens_dict = get_apis_from_env()
     session_id = uuid.uuid4()
 
-    _wrapper = APIWrapper(server_domain)
+    _wrapper = APIWrapper(llm, task=prompt_string, api_domain=server_domain)
     toolkit = Toolkit.from_api_wrapper(_wrapper, api_keys_dict, access_tokens_dict, logger, str(session_id))
     tools = toolkit.get_tools()
 
