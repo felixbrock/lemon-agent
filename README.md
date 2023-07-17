@@ -75,18 +75,26 @@ os.environ["GITHUB_API_KEY"] = "*INSERT GITHUB API KEY HERE*"
 os.environ["DISCORD_WEBHOOK_URL"] = "*INSERT DISCORD CHANNEL WEBHOOK URL HERE*"
 ```
 
-#### Define your prompt and execute the Langchain Agent
+#### Example of defining your prompt and executing the Langchain Agent
+
+The following example makes use of several Lemon AI tools to
+
+1. Retrieve details about a personal repository on GitHub
+2. Get the top growing starred repositories of my account
+3. Send a Discord message with results and review.
+
+![Use Case Example](use-case-example.png)
 
 ```Python
 lemonai_repo_owner = "felixbrock"
 github_username = "Abdus2609"
 
 """ Define your instruction to be given to your LLM """
-prompt = f"""Get the description for a repository I am working with called lemonai (owner {lemonai_repo_owner}). 
-Also, get my top growing starred repositories (useername {github_username}). Analyse the descriptions of both 
-the LemonAI repository and my top starred repositories. Then, send a Discord message that firstly displays a 
-numerically bullet pointed leaderboard of the top growing starred repositories and their growth, and secondly 
-discusses how each tool could be useful specifically to lemonai's use case based on your analysis of the 
+prompt = f"""Get the description for a repository I am working with called lemonai (owner {lemonai_repo_owner}).
+Also, get my top growing starred repositories (username {github_username}). Analyze the descriptions of both
+the LemonAI repository and my top-starred repositories. Then, send a Discord message that first displays a
+numerically bullet-pointed leaderboard of the top growing starred repositories and their growth, and secondly
+discuss how each tool could be useful specifically to lemonai's use case based on your analysis of the
 descriptions of each repository."""
 
 """
@@ -97,10 +105,6 @@ model = OpenAI(temperature=0)
 
 execute_workflow(llm=model, prompt_string=prompt)
 ```
-
-What this example will achieve is a workflow of the following:
-
-Get LemonAI repository details > Get top growing starred repositories > Send Discord message with results and review 
 
 ### 4. Gain transparency on your Agent's decision making
 
