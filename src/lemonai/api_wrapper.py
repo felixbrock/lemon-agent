@@ -97,12 +97,23 @@ class APIWrapper:
                 for i in range(0, len(flattened_list)):
                     reduced_obj = {}
                     for key in key_list:
-                        reduced_obj[key] = flattened_list[i][key]
+                        reduced_obj[key] = self._get_value(flattened_list[i], key)
                     
                     reduced_response.append(reduced_obj)
             else:
                 reduced_response = {}
                 for key in key_list:
-                    reduced_response[key] = json_list[key]
+                    reduced_response[key] = self._get_value(json_list, key)
 
             return reduced_response
+
+    def _get_value(self, curr_dict, target_key):
+        if isinstance(curr_dict, dict):
+            for key, value in curr_dict.items():
+                if key == target_key:
+                    return value
+                elif isinstance(value, dict):
+                    result = self._get_value(value, target_key)
+                    if result is not None:
+                        return result
+        return None
