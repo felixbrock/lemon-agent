@@ -139,6 +139,7 @@ We already allow agents to interact with over [120 tools](https://github.com/fel
 - Github
 - Notion
 - Discord
+- Medium
 
 ## 🩻 Next Up
 
