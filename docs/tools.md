@@ -137,3 +137,8 @@
 ### Discord
 
 - Send message in channel: discord-message-send
+
+### Medium
+
+- Create a post: medium-post-create
+- Get all publications: medium-publication-get-all

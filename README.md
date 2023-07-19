@@ -145,13 +145,13 @@ We already allow agents to interact with over [120 tools](https://github.com/fel
 - [x] Github
 - [x] Notion
 - [x] Discord
+- [x] Medium
 - [ ] Gmail
 - [ ] Google Calendar
 - [ ] Kafka
 - [ ] Pipedrive
 - [ ] Monday.com
 - [ ] Stripe
-- [ ] Medium
 - [ ] Google Cloud Realtime Database
 - [ ] Salesforce
 
