@@ -142,3 +142,24 @@
 
 - Create a post: medium-post-create
 - Get all publications: medium-publication-get-all
+
+### Monday.com
+
+- Archive a board: monday-board-archive
+- Create a new board: monday-board-create
+- Get a board: monday-board-get
+- Get all boards: monday-board-get-all
+- Create a new column: monday-column-create
+- Get all columns: monday-column-get-all
+- Delete a group in a board: monday-group-delete
+- Create a group in a board: monday-group-create
+- Get list of groups in a board: monday-group-get-all
+- Add an update to an item: monday-item-add-update
+- Change a column value for a board item: monday-item-column-change
+- Change multiple column values for a board item: monday-item-columns-change
+- Create an item in a board's group: monday-item-create
+- Delete an item: monday-item-delete
+- Get an item: monday-item-get
+- Get all items: monday-item-get-all
+- Get items by column value: monday-item-get-by-column
+- Move item to group: monday-item-move

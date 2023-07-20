@@ -140,6 +140,7 @@ We already allow agents to interact with over [120 tools](https://github.com/fel
 - Notion
 - Discord
 - Medium
+- Monday.com
 
 ## 🩻 Next Up
 
@@ -147,11 +148,11 @@ We already allow agents to interact with over [120 tools](https://github.com/fel
 - [x] Notion
 - [x] Discord
 - [x] Medium
+- [x] Monday.com
 - [ ] Gmail
 - [ ] Google Calendar
 - [ ] Kafka
 - [ ] Pipedrive
-- [ ] Monday.com
 - [ ] Stripe
 - [ ] Google Cloud Realtime Database
 - [ ] Salesforce
