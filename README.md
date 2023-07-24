@@ -43,7 +43,7 @@ The interaction of your agents and all Lemon AI tools is provided by the [Lemon 
 
 ### 4. Use Lemon AI with LangChain
 
-The easiest way to give Lemon AI a try is via the Jupyter Notebook you can find in the [LangChain Docs](https://python.langchain.com/docs/modules/agents/tools/integrations/lemonai).
+The easiest way to give Lemon AI a try is via the Jupyter Notebook you can find in the [LangChain Docs](https://python.langchain.com/docs/integrations/tools/lemonai).
 
 Lemon AI automatically solves given tasks by finding the right combination of relevant tools or uses Lemon AI Functions as an alternative. The following example demonstrates how to retrieve a user from Hackernews and write it to a table in Airtable:
 
