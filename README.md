@@ -11,7 +11,7 @@
     <img alt="MIT License" src="https://img.shields.io/github/license/felixbrock/lemonai?labelColor=gray&color=yellow" />
   </a>
   <br />
-    <a href="https://python.langchain.com/docs/modules/agents/tools/integrations/lemonai">
+    <a href="https://python.langchain.com/docs/integrations/tools/lemonai">
     <img alt="Run Notebook in LangChain Docs" src="https://img.shields.io/badge/Run Notebook From LangChain Docs-x?style=for-the-badge&logoColor=white&label&labelColor=gray&color=gray">
   </a>
   <br />
