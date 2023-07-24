@@ -89,9 +89,10 @@ target_repo_name = "***INSERT REPO NAME YOU NEED INSPIRATION FOR***"
 
 """
 The username of the account that holds the starred repos you want to analyze to
-get inspiration for your repo
+get inspiration for your repo. This could also be your
+own username.
 """
-username_of_starred_repo_owner = "felixbrock"
+username_of_starred_repo_owner = "***INSERT USERNAME***"
 
 """ Define your instruction to be given to your LLM """
 prompt = f"""
