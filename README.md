@@ -61,9 +61,9 @@ To use tools that require authentication, you have to store the corresponding ac
 
 ```Python
 """ Load all relevant API Keys and Access Tokens into your environment variables """
-os.environ["OPENAI_API_KEY"] = "*INSERT OPENAI API KEY HERE*"
-os.environ["GITHUB_API_KEY"] = "*INSERT GITHUB API KEY HERE*"
-os.environ["DISCORD_WEBHOOK_URL"] = "*INSERT DISCORD CHANNEL WEBHOOK URL HERE*"
+os.environ["OPENAI_API_KEY"] = "***INSERT OPENAI API KEY HERE***"
+os.environ["GITHUB_API_KEY"] = "***INSERT GITHUB API KEY HERE***"
+os.environ["DISCORD_WEBHOOK_URL"] = "***INSERT DISCORD CHANNEL WEBHOOK URL HERE***"
 ```
 
 #### Example of defining your prompt and executing the Langchain Agent
@@ -77,16 +77,34 @@ The following example makes use of several Lemon AI tools to
 ![Use Case Example](use-case-example.png)
 
 ```Python
-lemonai_repo_owner = "Abdus2609"
-github_username = "Abdus2609"
+""" Your username """
+my_github_username = "***INSERT YOUR USERNAME***"
+
+"""
+The repo you want to get inspiration for.
+In case you don't have one, just fork this Lemon AI repo
+and use 'lemonai' as a value
+"""
+target_repo_name = "***INSERT REPO NAME YOU NEED INSPIRATION FOR***"
+
+"""
+The username of the account that holds the starred repos you want to analyze to
+get inspiration for your repo
+"""
+username_of_starred_repo_owner = "felixbrock"
 
 """ Define your instruction to be given to your LLM """
-prompt = f"""Get the description for a repository I am working with called lemonai (owner {lemonai_repo_owner}).
-Also, get my top growing starred repositories (username {github_username}). Analyze the descriptions of both
-the LemonAI repository and my top-starred repositories. Then, send a Discord message that first displays a
-numerically bullet-pointed leaderboard of the top growing starred repositories and their growth, and secondly
-discuss how each tool could be useful specifically to lemonai's use case based on your analysis of the
-descriptions of each repository."""
+prompt = f"""
+Get the description for a repository I am working with called {target_repo_name} (owner {my_github_username}).
+Retrieve the STARRED repositories of the user {username_of_starred_repo_owner} from the user's STAR list.
+Get the top-growing repositories from those STARRED repositories.
+Understand the descriptions of both, the LemonAI repository and the top STARRED repositories.
+Draft a message that first displays a numerically bullet-pointed leaderboard
+of the top 3 growing STARRED repositories and their growth,
+and secondly discuss how each tool could be useful specifically to lemonai's use case
+based on your analysis of the descriptions of each repository.
+Send this exact text to Discord.
+"""
 
 """
 Use the Lemon AI execute_workflow wrapper
@@ -94,12 +112,16 @@ to run your LangChain agent in combination with Lemon AI
 """
 model = OpenAI(temperature=0)
 
+"""
+To use local server include 'server_domain' arg
+with localhost address (e.g. 'server_domain='http://localhost:1313')
+"""
 execute_workflow(llm=model, prompt_string=prompt)
 ```
 
 #### (Optional) Define your Lemon AI Functions
 
-Similar to [OpenAI functions](https://openai.com/blog/function-calling-and-other-api-updates), Lemon AI provides the option to define workflows as reusable functions. These functions can be defined for use cases where it is especially important to move as close as possible to near-deterministic behavior. Specific workflows can be defined in a separate lemonai.json. You can find the corresponding tool ids (e.g. `hackernews-get-user`) in the [Tool Docs](https://github.com/felixbrock/lemonai/blob/main/docs/tools.md):
+Similar to [OpenAI functions](https://openai.com/blog/function-calling-and-other-api-updates), Lemon AI provides the option to define workflows as reusable functions. These functions can be defined for use cases where it is especially important to move as close as possible to near-deterministic behavior. Specific workflows can be defined in a separate `lemonai.json`. You can find the corresponding tool ids (e.g. `hackernews-get-user`) in the [Tool Docs](https://github.com/felixbrock/lemonai/blob/main/docs/tools.md):
 
 ```json
 [
