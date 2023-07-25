@@ -1,7 +1,7 @@
 <div align="center">
   <h1>🍋 Lemon AI</h1>
   <h3>Gateway to empower LLM agents to interact with the world</h3>
-  <a href="https://discord.gg/bsgzjEpw">
+  <a href="https://discord.gg/fWU4rDYSxw">
 <img alt="Discord" src="https://img.shields.io/badge/Join Discord-x?style=flat&logo=discord&logoColor=white&label&labelColor=gray&color=5865F2">
   </a>
   <a href="https://twitter.com/getlemonai">
