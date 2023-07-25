@@ -122,7 +122,7 @@ execute_workflow(llm=model, prompt_string=prompt)
 
 #### (Optional) Define your Lemon AI Functions
 
-Similar to [OpenAI functions](https://openai.com/blog/function-calling-and-other-api-updates), Lemon AI provides the option to define workflows as reusable functions. These functions can be defined for use cases where it is especially important to move as close as possible to near-deterministic behavior. Specific workflows can be defined in a separate `lemonai.json`. You can find the corresponding tool ids (e.g. `hackernews-get-user`) in the [Tool Docs](https://github.com/felixbrock/lemonai/blob/main/docs/tools.md):
+Similar to [OpenAI functions](https://openai.com/blog/function-calling-and-other-api-updates), Lemon AI provides the option to define workflows as reusable functions. These functions can be defined for use cases where it is especially important to move as close as possible to near-deterministic behavior. Specific workflows can be defined in a separate `lemonai.json` file that needs to be placed at the project root. You can find the corresponding tool ids (e.g. `hackernews-get-user`) in the [Tool Docs](https://github.com/felixbrock/lemonai/blob/main/docs/tools.md):
 
 ```json
 [
