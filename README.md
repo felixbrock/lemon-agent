@@ -26,7 +26,7 @@ Lemon Agent is a standalone supervised Plan and Solve Agent _(ACL 2023 Paper "[P
 
 🤝 **Separation of tasks and human in the loop interactions**
 
-> Lemon Agent is currently holding a Planner Agent and a Solver Agent to keep the agents focussed and increase accuracy. We are planning on adding additional agents real soon. In addition, Lemon Agent will ask for approval at relevant workflow steps to make sure the intended actions are executed (check out the [Link]Demo).
+> Lemon Agent is currently holding a Planner Agent and a Solver Agent to keep the agents focussed and increase accuracy. We are planning on adding additional agents real soon. In addition, Lemon Agent will ask for approval at relevant workflow steps to make sure the intended actions are executed.
 
 🌌 **Unlimited configuration options**
 
@@ -84,7 +84,7 @@ Similar to [OpenAI functions](https://openai.com/blog/function-calling-and-other
 }
 ```
 
-To run the workflow all you have to do is to tell the Lemon Agent to _'get information about a repository'_ and finally approve _'yes, do this for the repository lemon-agent and the owner felixbrock'_ (checkout the [Link]Demo).
+To run the workflow all you have to do is to tell the Lemon Agent to _'get information about a repository'_ and finally approve _'yes, do this for the repository lemon-agent and the owner felixbrock'_.
 
 ### 5. Gain transparency on your Agent's decision making
 
