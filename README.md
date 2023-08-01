@@ -103,6 +103,10 @@ By using the analytics visualization you can easily gain a better understanding 
 
 ![Heatmap Example](public/heatmap-example.png)
 
+## 🏗️ Architecture
+
+![Agent Architecture](public/lemon-agent-architecture.png)
+
 ## 🧩 Supported Tools
 
 We already allow agents to interact with over [120 tools](https://github.com/felixbrock/lemon-agent/blob/main/docs/tools.md) across the following services:
