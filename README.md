@@ -105,6 +105,8 @@ By using the analytics visualization you can easily gain a better understanding 
 
 ## 🏗️ Architecture
 
+A Lemon Agent session is initiated by the user. Via the UI the user then directly chats with the planner agent to define how to solve a given task. Once a solution was defined, the planner agent then starts communicating with the execution agent, which, finally, executes a given workflow step by making use of the multiple tools that are available to the Lemon Agent.
+
 ![Agent Architecture](public/lemon-agent-architecture.png)
 
 ## 🧩 Supported Tools
