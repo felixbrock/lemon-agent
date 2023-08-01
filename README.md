@@ -16,16 +16,9 @@
   </a>
   <br />
   <br />
-  <div style="position: relative; padding-bottom: 62.5%; height: 0;"><iframe src="https://www.loom.com/embed/13562e91a3054a18857615032bb68850?sid=7e42be95-a950-41ff-9870-8bcda3ab19f7" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
-  <div>
-    <a href="https://www.loom.com/share/13562e91a3054a18857615032bb68850">
-      <p>Library | Loom - 1 August 2023 - Watch Video</p>
-    </a>
-    <a href="https://www.loom.com/share/13562e91a3054a18857615032bb68850">
-      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/13562e91a3054a18857615032bb68850-with-play.gif">
-    </a>
-  </div>
 </div>
+
+https://github.com/felixbrock/lemon-agent/assets/70200999/fc829e7a-0827-45e9-9ecf-13d47f6ff819
 
 **Start talking to your [tools](#🧩-supported-tools) like Airtable, Hubspot, Discord, Notion and GitHub in minutes and build powerful workflow automations by enabling your LLM to reliably perform read and write operations.**
 
