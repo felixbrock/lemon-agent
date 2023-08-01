@@ -1,0 +1,44 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "pipeline": {
+    "build": {
+      "dependsOn": ["^build"]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true,
+      "dependsOn": ["build"],
+      "dotEnv": [".env.development"]
+    },
+    "debug": {
+      "cache": false,
+      "dependsOn": ["build"],
+      "persistent": true,
+      "dotEnv": [".env.development"]
+    },
+    "start": {
+      "cache": false,
+      "dependsOn": ["build"],
+      "persistent": true,
+      "dotEnv": [".env"]
+    },
+    "dev-win": {
+      "cache": false,
+      "persistent": true,
+      "dependsOn": ["build"],
+      "dotEnv": [".env.development"]
+    },
+    "debug-win": {
+      "cache": false,
+      "dependsOn": ["build"],
+      "persistent": true,
+      "dotEnv": [".env.development"]
+    },
+    "start-win": {
+      "cache": false,
+      "persistent": true,
+      "dependsOn": ["build"],
+      "dotEnv": [".env"]
+    }
+  }
+}

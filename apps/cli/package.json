@@ -1,0 +1,25 @@
+{
+  "name": "cli-app",
+  "version": "0.0.0",
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "lint": "npx eslint . --ext .js,.jsx,.ts,.tsx",
+    "clean": "rimraf dist",
+    "tsc": "tsc",
+    "build": "pnpm run clean && pnpm run tsc && pnpm run lint",
+    "nodemon-run": "nodemon ./src/index.ts",
+    "nodemon-debug": "nodemon --inspect ./src/index.ts 1313",
+    "start": "export NODE_ENV=production&& pnpm run nodemon-run",
+    "dev": "export NODE_ENV=development&& pnpm run nodemon-run",
+    "debug": "export NODE_ENV=development&& pnpm run nodemon-debug",
+    "start-win": "set NODE_ENV=production&& pnpm run nodemon-run",
+    "dev-win": "set NODE_ENV=development&& pnpm run nodemon-run",
+    "debug-win": "set NODE_ENV=development&& pnpm run nodemon-debug"
+  },
+  "devDependencies": {
+    "eslint-config-custom": "workspace:*",
+    "tsconfig": "workspace:*",
+    "agent": "workspace:*",
+    "cli": "workspace:*"
+  }
+}

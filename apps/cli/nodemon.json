@@ -1,0 +1,10 @@
+{
+  "restartable": "rs",
+  "ignore": ["node_modules/**/node_modules"],
+  "verbose": true,
+  "execMap": {
+    "ts": "node --require ts-node/register"
+  },
+  "watch": ["src/"],
+  "ext": "js,json,ts"
+}

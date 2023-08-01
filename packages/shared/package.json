@@ -1,0 +1,17 @@
+{
+  "name": "shared",
+  "version": "0.0.0",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "lint": "npx eslint . --ext .js,.jsx,.ts,.tsx",
+    "clean": "rimraf dist",
+    "tsc": "tsc",
+    "build": "pnpm run clean && pnpm run tsc && pnpm run lint"
+  },
+  "devDependencies": {
+    "eslint-config-custom": "workspace:*",
+    "tsconfig": "workspace:*"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "lemon-agent",
+  "packageManager": "pnpm@8.6.10",
+  "private": true,
+  "scripts": {
+    "preinstall": "npx only-allow pnpm"
+  },
+  "devDependencies": {
+    "@tsconfig/node20": "^1.0.2",
+    "@turbo/gen": "^1.10.12",
+    "@types/node": "^20.4.5",
+    "eslint": "^8.46.0",
+    "nodemon": "^2.0.22",
+    "prettier": "^2.8.8",
+    "rimraf": "^5.0.1",
+    "turbo": "latest",
+    "typescript": "^5.1.6",
+    "eslint-config-custom": "workspace:*",
+    "tsconfig": "workspace:*"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "ts-node": "^10.9.1"
+  }
+}

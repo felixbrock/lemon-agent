@@ -1,0 +1,9 @@
+{
+  "eslint.workingDirectories": [
+    "./packages/agent",
+    "./packages/connector",
+    "./packages/shared",
+    "./packages/cli",
+    "./apps/cli"
+  ]
+}

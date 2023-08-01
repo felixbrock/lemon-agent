@@ -1,0 +1,30 @@
+[
+  {
+    "steps": [
+      {
+        "toolId": "hackernews-get-user",
+        "userPermissionRequired": false
+      },
+      {
+        "toolId": "airtable-append-data",
+        "userPermissionRequired": true
+      }
+    ]
+  },
+  {
+    "steps": [
+      {
+        "toolId": "hackernews-get-user",
+        "userPermissionRequired": false
+      }
+    ]
+  },
+  {
+    "steps": [
+      {
+        "toolId": "github-repo-get",
+        "userPermissionRequired": false
+      }
+    ]
+  }
+]

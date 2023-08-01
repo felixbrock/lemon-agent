@@ -1,0 +1,24 @@
+{
+  "name": "agent",
+  "version": "0.0.0",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "lint": "npx eslint . --ext .js,.jsx,.ts,.tsx",
+    "clean": "rimraf dist",
+    "tsc": "tsc",
+    "build": "pnpm run clean && pnpm run tsc && pnpm run lint"
+  },
+  "devDependencies": {
+    "eslint-config-custom": "workspace:*",
+    "tsconfig": "workspace:*",
+    "connector": "workspace:*",
+    "shared": "workspace:*"
+  },
+  "dependencies": {
+    "awilix": "^8.0.1",
+    "axios": "^1.4.0",
+    "openai": "^3.3.0"
+  }
+}
