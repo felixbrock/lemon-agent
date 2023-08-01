@@ -3,7 +3,7 @@
   "packageManager": "pnpm@8.6.10",
   "private": true,
   "scripts": {
-    "preinstall": "npx only-allow pnpm"
+    "preinstall": "pnpm dlx only-allow pnpm"
   },
   "devDependencies": {
     "@tsconfig/node20": "^1.0.2",

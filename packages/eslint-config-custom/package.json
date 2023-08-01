@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "preinstall": "npx only-allow pnpm"
+    "preinstall": "pnpm dlx only-allow pnpm"
   },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^5.60.0",

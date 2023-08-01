@@ -1,6 +1,6 @@
 <div align="center">
-  <h1>🍋 Lemon AI</h1>
-  <h3>Gateway to empower LLM agents to interact with the world</h3>
+  <h1>🍋 Lemon Agent</h1>
+  <h3>When life gives you lemons, automate it using Lemon Agent 😎</h3>
   <a href="https://discord.gg/fWU4rDYSxw">
 <img alt="Discord" src="https://img.shields.io/badge/Join Discord-x?style=flat&logo=discord&logoColor=white&label&labelColor=gray&color=5865F2">
   </a>
@@ -8,137 +8,86 @@
     <img alt="Twitter" src="https://img.shields.io/badge/Tweet at us-x?style=flat&logo=twitter&logoColor=white&label&labelColor=gray&color=1DA1F2">
   </a>
   <a href="https://github.com/trpc/trpc/blob/main/LICENSE">
-    <img alt="MIT License" src="https://img.shields.io/github/license/felixbrock/lemonai?labelColor=gray&color=yellow" />
+    <img alt="MIT License" src="https://img.shields.io/github/license/felixbrock/lemonagent?labelColor=gray&color=yellow" />
   </a>
   <br />
-    <a href="https://python.langchain.com/docs/integrations/tools/lemonai">
+    <a href="https://python.langchain.com/docs/integrations/tools/lemonagent">
     <img alt="Run Notebook in LangChain Docs" src="https://img.shields.io/badge/Run Notebook From LangChain Docs-x?style=for-the-badge&logoColor=white&label&labelColor=gray&color=gray">
   </a>
   <br />
   <br />
-  <figure>
-    <img src="heatmap-example.gif" alt="Demo" />
-  </figure>
+  
 </div>
 
-**Lemon AI helps you build powerful AI assistants in minutes and automate workflows by allowing for accurate and reliable read and write operations in [tools](#🧩-supported-tools) like Airtable, Hubspot, Discord, Notion, Slack and Github.**
+**Start talking to your [tools](#🧩-supported-tools) like Airtable, Hubspot, Discord, Notion and GitHub in minutes and build powerful workflow automations by enabling your LLM to reliably perform read and write operations.**
 
-Most connectors available today are focused on read-only operations, limiting the potential of LLMs. Agents, on the other hand, have a tendency to hallucinate from time to time due to missing context or instructions.
+Lemon Agent is a standalone supervised Plan and Solve Agent _(ACL 2023 Paper "[Plan-and-Solve Prompting: Improving Zero-Shot Chain-of-Thought Reasoning by Large Language Models](https://arxiv.org/abs/2305.04091)")_ that allows for
 
-With Lemon AI, it is possible to give your agents access to well-defined APIs for reliable read and write operations. In addition, Lemon AI functions allow you to further reduce the risk of hallucinations by providing a way to statically define workflows that the model can rely on in case of uncertainty.
+🤝 **Separation of tasks and human in the loop interactions**
+
+> Lemon Agent is currently holding a Planner Agent and a Solver Agent to keep the agents focussed and increase accuracy. We are planning on adding additional agents real soon. In addition, Lemon Agent will ask for approval at relevant workflow steps to make sure the intended actions are executed (check out the [Link]Demo).
+
+🌌 **Unlimited configuration options**
+
+> Lemon Agent gives you unlimited configuration options (see example here) when defining your workflow. For instance, you can tell Lemon Agent to ask for permission before executing a workflow step or to drop a 🧔‍♀️ dad joke every time the model executes a workflow step.
+
+👀 **UI flexibility**
+
+> Build any UI on top or engage with Lemon Agent via the built-in CLI.
+
+🎨 **[Soon] Model & framework agnostic operations**
+
+> Lemon Agent is a standalone agent, but can easily be integrated into frameworks like LangChain and be used with any model.
+
+**Bonus:** Get a detailed understanding of how Lemon Agent interacts with your tools in each step using the [analytics visualization](#5-gain-transparency-on-your-agents-decision-making) (**.html file that can be run without any additional installation**)!
+
+<div align="center">
+<figure>
+    <img src="public/heatmap-example.gif" alt="Demo" />
+  </figure>
+</div>
 
 ## ⚡️ Getting Started
 
 ### 1. Prerequisites
 
-Requires Python 3.8.1 and above.
+- Node.js 18.x or above.
+- [pnpm](https://pnpm.io/installation)
+- If you are following this example an OpenAI API key and a [GitHub personal access token](https://pnpm.io/installation)
 
 ### 2. Installing
 
-To use Lemon AI in your Python project run `pip install lemonai`. The following example uses an OpenAI model. Therefore, we also need to `pip install openai`. Depending on which model you want to use this install is optional.
+1. To run the Lemon Agent locally `git clone` this repo.
+2. Open the local clone with your favourite IDE and run `pnpm i` at the root of the project.
 
-### 3. (Optional) Launch the server
+### 3. Start the Lemon Agent
 
-The interaction of your agents and all Lemon AI tools is provided by the [Lemon AI Server](https://github.com/felixbrock/lemonai-server). Per default the Lemon AI Python client is sending requests to a hosted server version. To run the Lemon AI server on-prem please refer to the [Server Documentation](https://github.com/felixbrock/lemonai-server).
+1. At the root of your project run `cp .env.example .env.development` to create a new env file.
+2. Store your OpenAI (as _AUTH_TOKEN_OPENAI_) and GitHub (as _AUTH_TOKEN_GITHUB_) auth token in _.env.development_.
+3. At the root of the project run `pnpm dlx turbo dev` to start the Lemon Agent. In case this doesn't work for you run `pnpm dlx turbo build` at the root, run `cd apps/cli` to navigate to the project's cli client and run `pnpm run dev`.
 
-### 4. Use Lemon AI with LangChain
+By now your Lemon Agent should be running and waiting for a task to solve.
 
-The easiest way to give Lemon AI a try is via the Jupyter Notebook you can find in the [LangChain Docs](https://python.langchain.com/docs/integrations/tools/lemonai).
+### 4. A simple example
 
-Lemon AI automatically solves given tasks by finding the right combination of relevant tools or uses Lemon AI Functions as an alternative. The following example demonstrates how to retrieve a user from Hackernews and write it to a table in Airtable:
+Similar to [OpenAI functions](https://openai.com/blog/function-calling-and-other-api-updates), the Lemon Agent provides the option to define workflows as reusable functions. You define and configure any worfklow you want in `data/workflow.json`. Just combine the tools you want and add additional fields like `userPermissionRequired` (is interpreted by the model as a pre-execution condition to ask the user whether to execute a workflow step) to further configure the workflows. You can find the corresponding tool ids (e.g. `github-repo-get`) in the [Tool Docs](https://github.com/felixbrock/lemonagent/blob/main/docs/tools.md)
 
-#### Include Lemon AI in your LangChain project
-
-```Python
-import os
-from lemonai import execute_workflow
-from langchain import OpenAI
+```Json
+{
+  "steps": [
+    {
+      "toolId": "github-repo-get",
+      "userPermissionRequired": false
+    }
+  ]
+}
 ```
 
-#### Load API keys and access tokens
-
-To use tools that require authentication, you have to store the corresponding access credentials in your environment in the format "{tool name}\_{authentication string}" where the authentication string is one of ["API_KEY", "SECRET_KEY", "SUBSCRIPTION_KEY", "ACCESS_KEY"] for API keys or ["ACCESS_TOKEN", "SECRET_TOKEN"] for authentication tokens. Examples are "OPENAI_API_KEY", "BING_SUBSCRIPTION_KEY", "AIRTABLE_ACCESS_TOKEN".
-
-```Python
-""" Load all relevant API Keys and Access Tokens into your environment variables """
-os.environ["OPENAI_API_KEY"] = "***INSERT OPENAI API KEY HERE***"
-os.environ["GITHUB_API_KEY"] = "***INSERT GITHUB API KEY HERE***"
-os.environ["DISCORD_WEBHOOK_URL"] = "***INSERT DISCORD CHANNEL WEBHOOK URL HERE***"
-```
-
-#### Example of defining your prompt and executing the Langchain Agent
-
-The following example makes use of several Lemon AI tools to
-
-1. Retrieve details about a personal repository on GitHub
-2. Get the top growing starred repositories of my account
-3. Send a Discord message with results and review.
-
-![Use Case Example](use-case-example.png)
-
-```Python
-""" Your username """
-my_github_username = "***INSERT YOUR USERNAME***"
-
-"""
-The repo you want to get inspiration for.
-In case you don't have one, just fork this Lemon AI repo
-and use 'lemonai' as a value
-"""
-target_repo_name = "***INSERT REPO NAME YOU NEED INSPIRATION FOR***"
-
-"""
-The username of the account that holds the starred repos you want to analyze to
-get inspiration for your repo. This could also be your
-own username.
-"""
-username_of_starred_repo_owner = "***INSERT USERNAME***"
-
-""" Define your instruction to be given to your LLM """
-prompt = f"""
-Get the description for a repository I am working with called {target_repo_name} (owner {my_github_username}).
-Retrieve the STARRED repositories of the user {username_of_starred_repo_owner} from the user's STAR list.
-Get the top-growing repositories from those STARRED repositories.
-Understand the descriptions of both, the LemonAI repository and the top STARRED repositories.
-Draft a message that first displays a numerically bullet-pointed leaderboard
-of the top 3 growing STARRED repositories and their growth,
-and secondly discuss how each tool could be useful specifically to lemonai's use case
-based on your analysis of the descriptions of each repository.
-Send this exact text to Discord.
-"""
-
-"""
-Use the Lemon AI execute_workflow wrapper
-to run your LangChain agent in combination with Lemon AI
-"""
-model = OpenAI(temperature=0)
-
-"""
-To use local server include 'server_domain' arg
-with localhost address (e.g. 'server_domain='http://localhost:1313')
-"""
-execute_workflow(llm=model, prompt_string=prompt)
-```
-
-#### (Optional) Define your Lemon AI Functions
-
-Similar to [OpenAI functions](https://openai.com/blog/function-calling-and-other-api-updates), Lemon AI provides the option to define workflows as reusable functions. These functions can be defined for use cases where it is especially important to move as close as possible to near-deterministic behavior. Specific workflows can be defined in a separate `lemonai.json` file that needs to be placed at the project root. You can find the corresponding tool ids (e.g. `hackernews-get-user`) in the [Tool Docs](https://github.com/felixbrock/lemonai/blob/main/docs/tools.md):
-
-```json
-[
-  {
-    "name": "Hackernews Airtable User Workflow",
-    "description": "retrieves user data from Hackernews and appends it to a table in Airtable",
-    "tools": ["hackernews-get-user", "airtable-append-data"]
-  }
-]
-```
-
-Your model will have access to these functions and will prefer them over self-selecting tools to solve a given task. All you have to do is to let the agent know that it should use a given function by including the function name in the prompt (e.g. `prompt = f"""Execute the Hackernews Airtable user workflow...`).
+To run the workflow all you have to do is to tell the Lemon Agent to _'get information about a repository'_ and finally approve _'yes, do this for the repository lemonagent and the owner felixbrock'_ (checkout the [Link]Demo).
 
 ### 5. Gain transparency on your Agent's decision making
 
-To gain transparency on how your Agent interacts with Lemon AI tools to solve a given task, all decisions made, tools used and operations performed are written to a local `lemonai.log` file. Every time your LLM agent is interacting with the Lemon AI tool stack a corresponding log entry is created:
+To gain transparency on how your Agent interacts with Lemon AI tools to solve a given task, all decisions made, tools used and operations performed are written to a local `execution.log` file. Every time your LLM agent is interacting with the Lemon AI tool stack a corresponding log entry is created:
 
 ```log
 2023-06-26T11:50:27.708785+0100 - b5f91c59-8487-45c2-800a-156eac0c7dae - hackernews-get-user
@@ -147,13 +96,13 @@ To gain transparency on how your Agent interacts with Lemon AI tools to solve a 
 2023-06-26T11:58:43.988788+0100 - 5efe603c-9898-4143-b99a-55b50007ed9d - airtable-append-data
 ```
 
-By using the [Lemon AI Analytics Tool](https://github.com/felixbrock/lemonai-analytics) you can easily gain a better understanding of how frequently and in which order tools are used. As a result, you can identify weak spots in your agent’s decision-making capabilities and move to a more deterministic behavior by defining Lemon AI functions.
+By using the analytics visualization you can easily gain a better understanding of how frequently and in which order tools are used. As a result, you can identify weak spots in your agent’s decision-making capabilities and move to a more deterministic behavior by further configuring your Lemon Agent workflows.
 
-![Heatmap Example](heatmap-example.png)
+![Heatmap Example](public/heatmap-example.png)
 
 ## 🧩 Supported Tools
 
-We already allow agents to interact with over [120 tools](https://github.com/felixbrock/lemonai/blob/main/docs/tools.md) across the following services:
+We already allow agents to interact with over [120 tools](https://github.com/felixbrock/lemonagent/blob/main/docs/tools.md) across the following services:
 
 - HackerNews
 - Airtable
@@ -182,7 +131,7 @@ We already allow agents to interact with over [120 tools](https://github.com/fel
 
 ## 🦸 Contributing
 
-Great to see you here! We are extremely open to contributions! You can find more information in our [CONTRIBUTING.md](https://github.com/felixbrock/lemonai/blob/main/.github/CONTRIBUTING.md). If you have any more questions feel free to drop us a message on <a href="https://discord.gg/bsgzjEpw">Discord</a>.
+Great to see you here! We are extremely open to contributions! You can find more information in our [CONTRIBUTING.md](https://github.com/felixbrock/lemonagent/blob/main/.github/CONTRIBUTING.md). If you have any more questions feel free to drop us a message on <a href="https://discord.gg/bsgzjEpw">Discord</a>.
 
 ## ❤️‍🔥 Contributors
 

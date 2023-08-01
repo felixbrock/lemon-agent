@@ -5,5 +5,5 @@ Replace this comment with:
   - Issue: the issue # it fixes (if applicable),
   - Dependencies: any dependencies required for this change,
 
-You can find the contribution guidelines here: https://github.com/felixbrock/lemonai-py-client/blob/main/.github/CONTRIBUTING.md
+You can find the contribution guidelines here: https://github.com/felixbrock/lemonagent/blob/main/.github/CONTRIBUTING.md
  -->
