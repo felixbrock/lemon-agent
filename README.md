@@ -8,10 +8,10 @@
     <img alt="Twitter" src="https://img.shields.io/badge/Tweet at us-x?style=flat&logo=twitter&logoColor=white&label&labelColor=gray&color=1DA1F2">
   </a>
   <a href="https://github.com/trpc/trpc/blob/main/LICENSE">
-    <img alt="MIT License" src="https://img.shields.io/github/license/felixbrock/lemonagent?labelColor=gray&color=yellow" />
+    <img alt="MIT License" src="https://img.shields.io/github/license/felixbrock/lemon-agent?labelColor=gray&color=yellow" />
   </a>
   <br />
-    <a href="https://python.langchain.com/docs/integrations/tools/lemonagent">
+    <a href="https://python.langchain.com/docs/integrations/tools/lemon-agent">
     <img alt="Run Notebook in LangChain Docs" src="https://img.shields.io/badge/Run Notebook From LangChain Docs-x?style=for-the-badge&logoColor=white&label&labelColor=gray&color=gray">
   </a>
   <br />
@@ -70,7 +70,7 @@ By now your Lemon Agent should be running and waiting for a task to solve.
 
 ### 4. A simple example
 
-Similar to [OpenAI functions](https://openai.com/blog/function-calling-and-other-api-updates), the Lemon Agent provides the option to define workflows as reusable functions. You define and configure any worfklow you want in `data/workflow.json`. Just combine the tools you want and add additional fields like `userPermissionRequired` (is interpreted by the model as a pre-execution condition to ask the user whether to execute a workflow step) to further configure the workflows. You can find the corresponding tool ids (e.g. `github-repo-get`) in the [Tool Docs](https://github.com/felixbrock/lemonagent/blob/main/docs/tools.md)
+Similar to [OpenAI functions](https://openai.com/blog/function-calling-and-other-api-updates), the Lemon Agent provides the option to define workflows as reusable functions. You define and configure any worfklow you want in `data/workflow.json`. Just combine the tools you want and add additional fields like `userPermissionRequired` (is interpreted by the model as a pre-execution condition to ask the user whether to execute a workflow step) to further configure the workflows. You can find the corresponding tool ids (e.g. `github-repo-get`) in the [Tool Docs](https://github.com/felixbrock/lemon-agent/blob/main/docs/tools.md)
 
 ```Json
 {
@@ -83,7 +83,7 @@ Similar to [OpenAI functions](https://openai.com/blog/function-calling-and-other
 }
 ```
 
-To run the workflow all you have to do is to tell the Lemon Agent to _'get information about a repository'_ and finally approve _'yes, do this for the repository lemonagent and the owner felixbrock'_ (checkout the [Link]Demo).
+To run the workflow all you have to do is to tell the Lemon Agent to _'get information about a repository'_ and finally approve _'yes, do this for the repository lemon-agent and the owner felixbrock'_ (checkout the [Link]Demo).
 
 ### 5. Gain transparency on your Agent's decision making
 
@@ -102,7 +102,7 @@ By using the analytics visualization you can easily gain a better understanding 
 
 ## 🧩 Supported Tools
 
-We already allow agents to interact with over [120 tools](https://github.com/felixbrock/lemonagent/blob/main/docs/tools.md) across the following services:
+We already allow agents to interact with over [120 tools](https://github.com/felixbrock/lemon-agent/blob/main/docs/tools.md) across the following services:
 
 - HackerNews
 - Airtable
@@ -131,7 +131,7 @@ We already allow agents to interact with over [120 tools](https://github.com/fel
 
 ## 🦸 Contributing
 
-Great to see you here! We are extremely open to contributions! You can find more information in our [CONTRIBUTING.md](https://github.com/felixbrock/lemonagent/blob/main/.github/CONTRIBUTING.md). If you have any more questions feel free to drop us a message on <a href="https://discord.gg/bsgzjEpw">Discord</a>.
+Great to see you here! We are extremely open to contributions! You can find more information in our [CONTRIBUTING.md](https://github.com/felixbrock/lemon-agent/blob/main/.github/CONTRIBUTING.md). If you have any more questions feel free to drop us a message on <a href="https://discord.gg/bsgzjEpw">Discord</a>.
 
 ## ❤️‍🔥 Contributors
 

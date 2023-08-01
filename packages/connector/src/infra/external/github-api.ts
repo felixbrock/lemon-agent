@@ -15,7 +15,7 @@ export class GithubApi extends BaseExternalApi {
   ): Promise<ApiResponse> => {
     try {
       const headers: Record<string, string> = {
-        'User-Agent': 'lemonagent',
+        'User-Agent': 'lemon-agent',
         Authorization: `Bearer ${authToken}`,
       };
 
