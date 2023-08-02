@@ -105,45 +105,52 @@ const colorGradiant = [
 
 const parseLogData = (logData) => {
   const logLines = logData.split('\n');
-  return logLines.map((logEntry) => logEntry.split(' - '));
+  const logDataObjs = logLines
+    .filter((el) => !!el)
+    .map((logEntry) => {
+      const msg = logEntry.split(' - ')[1];
+
+      const timestamp = logEntry.substring(
+        logEntry.indexOf('[') + 1,
+        logEntry.indexOf(']')
+      );
+
+      return { ...JSON.parse(msg), timestamp };
+    });
+
+  return logDataObjs;
 };
 
-const transformLogEntry = (data) => ({
-  timestamp: data[0],
-  sessionId: data[1],
-  toolAction: data[2],
-});
-
 const generatedBaseGraphData = (data) => {
-  let prevToolAction;
-  let prevSessionId;
+  let prevAction;
+  let prevExecutionId;
 
   const rawData = data.reduce(
     (acc, entry) => {
       const localAcc = acc;
 
-      const { sessionId, toolAction } = entry;
+      const { executionId, action, timestamp } = entry;
 
-      if (!sessionId || !toolAction) return localAcc;
+      if (!executionId || !action || !timestamp) return localAcc;
 
-      localAcc.toolActions.push(toolAction);
+      localAcc.nodes.push(action);
 
-      if (prevSessionId === sessionId && prevToolAction)
-        localAcc.edges.push({ source: prevToolAction, target: toolAction });
+      if (prevExecutionId === executionId && prevAction)
+        localAcc.edges.push({ source: prevAction, target: action });
 
-      prevToolAction = toolAction;
-      prevSessionId = sessionId;
+      prevAction = action;
+      prevExecutionId = executionId;
 
       return localAcc;
     },
-    { toolActions: [], edges: [] }
+    { nodes: [], edges: [] }
   );
 
   const nodes = [];
-  rawData.toolActions.forEach((toolAction) => {
-    const nodeIndex = nodes.findIndex((node) => node.id === toolAction);
+  rawData.nodes.forEach((action) => {
+    const nodeIndex = nodes.findIndex((node) => node.id === action);
     if (nodeIndex === -1)
-      nodes.push({ id: toolAction, label: toolAction, numExecutions: 1 });
+      nodes.push({ id: action, label: action, numExecutions: 1 });
     else nodes[nodeIndex].numExecutions += 1;
   });
 
@@ -353,11 +360,10 @@ const buildGraph = (graphData) => {
 };
 
 document.getElementById('inputfile').addEventListener('change', function () {
-  var fr = new FileReader();
+  const fr = new FileReader();
   fr.onload = function () {
     const logEntries = parseLogData(fr.result);
-    const transformedData = logEntries.map(transformLogEntry);
-    const baseGraphData = generatedBaseGraphData(transformedData);
+    const baseGraphData = generatedBaseGraphData(logEntries);
     const graphData = formatGraphData(baseGraphData.nodes, baseGraphData.edges);
     buildGraph(graphData);
   };

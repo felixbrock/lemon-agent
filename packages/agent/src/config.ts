@@ -1,6 +1,5 @@
 import dotenv from 'dotenv';
-
-import { dirname, resolve } from 'path';
+import { resolve, dirname } from 'path';
 
 const getInvocationDirPath = (): string => {
   if (!require.main?.filename) throw new Error('Missing require.main.filename');

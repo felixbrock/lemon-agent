@@ -41,8 +41,8 @@ export class PlannerAgent extends BaseAgent<Message, Response> {
       
       NEVER make up any additional workflows. Always double-check that the workflow you want to suggest is actually mentioned above. Make sure you are only sugesting the workflows mentioned before.
 
-      After the user selected a workflow ask EXACTLY ONCE whether you should solve use this workflow to solve the provided task.  
-      Once the user selected a workflow, return the following JSON structure "{action: 'solve', content: [INSERT THE STEPS OF THE WORKFLOW HERE]}". If the workflow requires a dad joke before executing, provide one before returning.
+      After the user selected a workflow ask EXACTLY ONCE whether you should solve use this workflow to solve the provided task. 
+      Once the user selected a workflow, return the following JSON structure "{action: 'solve', content: [INSERT THE STEPS OF THE WORKFLOW HERE]}". If any of the workflow steps contains a field that requires you to tell a dad joke,  please go ahead.
       `,
     });
   }
