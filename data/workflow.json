@@ -23,7 +23,8 @@
     "steps": [
       {
         "toolId": "github-repo-get",
-        "userPermissionRequired": false
+        "userPermissionRequired": false,
+        "tellDadJoke": true
       }
     ]
   }

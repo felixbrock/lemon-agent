@@ -1,22 +1,22 @@
 // TODO: Violation of control flow. DI for express instead
-import { BaseController, CodeHttp, isRequest } from "./base-controller";
+import { BaseController, CodeHttp, isRequest } from './base-controller';
 import {
   isApiErrorResponse,
   isRichApiErrorResponse,
-} from "../../../services/identify-error-response";
+} from '../../../services/identify-error-response';
 import {
   type ExecuteWorkflowReq,
   type ExecuteWorkflow,
   type ICLI,
-} from "../../../domain/use-cases/execute-workflow";
-import { type Request, type Response } from "./base-controller";
-import { PlannerAgent } from "../../../domain/value-types/agent/planner-agent";
-import { appConfig } from "../../../config";
-import { parseModelType } from "../../../domain/value-types/model";
-import { Configuration, OpenAIApi } from "openai";
-import fs from "fs";
-import path from "path";
-import { SolverAgent } from "../../../domain/value-types/agent/solver-agent";
+} from '../../../domain/use-cases/execute-workflow';
+import { type Request, type Response } from './base-controller';
+import { PlannerAgent } from '../../../domain/value-types/agent/planner-agent';
+import { appConfig } from '../../../config';
+import { parseModelType } from '../../../domain/value-types/model';
+import { Configuration, OpenAIApi } from 'openai';
+import fs from 'fs';
+import path from 'path';
+import { SolverAgent } from '../../../domain/value-types/agent/solver-agent';
 
 export default class ExecuteWorkflowController extends BaseController {
   readonly #executeWorkflow: ExecuteWorkflow;
@@ -29,22 +29,22 @@ export default class ExecuteWorkflowController extends BaseController {
   }
 
   buildRequest = (req: Request): ExecuteWorkflowReq => {
-    if (!isRequest(req)) throw new Error("Request missing params");
+    if (!isRequest(req)) throw new Error('Request missing params');
 
     const modelType = appConfig.modelType;
 
-    if (!parseModelType(modelType)) throw new Error("Invalid model type");
+    if (!parseModelType(modelType)) throw new Error('Invalid model type');
 
     let accessToken: string;
     switch (modelType) {
-      case "gpt-3.5-turbo": {
+      case 'gpt-3.5-turbo': {
         if (!appConfig.accessToken.openaiAuthToken)
-          throw new Error("Missing OpenAI access token");
+          throw new Error('Missing OpenAI access token');
         accessToken = appConfig.accessToken.openaiAuthToken;
         break;
       }
       default:
-        throw new Error("Invalid model type");
+        throw new Error('Invalid model type');
     }
 
     const modelApi = new OpenAIApi(
@@ -64,7 +64,7 @@ export default class ExecuteWorkflowController extends BaseController {
           .readFileSync(
             path.resolve(
               appConfig.nodejs.invocationDirPath,
-              "./data/workflow.json"
+              './data/workflow.json'
             )
           )
           .toString()
@@ -91,7 +91,7 @@ export default class ExecuteWorkflowController extends BaseController {
       if (!result)
         return ExecuteWorkflowController.fail(
           res,
-          "Get tools. Internal error."
+          'Get tools. Internal error.'
         );
 
       return ExecuteWorkflowController.ok(res, result, CodeHttp.OK);
@@ -103,7 +103,7 @@ export default class ExecuteWorkflowController extends BaseController {
       } else if (error) console.trace(error);
       return ExecuteWorkflowController.fail(
         res,
-        "run tool - Internal error occurred"
+        'run tool - Internal error occurred'
       );
     }
   }

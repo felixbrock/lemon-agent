@@ -4,8 +4,8 @@
   "main": "./src/index.ts",
   "types": "./src/index.ts",
   "scripts": {
-    "preinstall": "pnpm dlx only-allow pnpm",
-    "lint": "pnpm dlx eslint . --ext .js,.jsx,.ts,.tsx",
+    "preinstall": "pnpm exec only-allow pnpm",
+    "lint": "pnpm exec eslint . --ext .js,.jsx,.ts,.tsx",
     "clean": "rimraf dist",
     "tsc": "tsc",
     "build": "pnpm run clean && pnpm run tsc && pnpm run lint"

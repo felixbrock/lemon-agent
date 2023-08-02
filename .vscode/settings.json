@@ -4,6 +4,7 @@
     "./packages/connector",
     "./packages/shared",
     "./packages/cli",
-    "./apps/cli"
+    "./apps/cli",
+    "./apps/analytics"
   ]
 }

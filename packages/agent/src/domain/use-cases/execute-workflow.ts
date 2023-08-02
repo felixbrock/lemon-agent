@@ -47,6 +47,7 @@ import {
   parseToolType,
 } from 'connector';
 import { appConfig } from '../../config';
+import { randomUUID } from 'crypto';
 
 export interface ICLI extends Interface {
   writeSysMsg: (
@@ -59,6 +60,10 @@ export interface ICLI extends Interface {
   ) => void;
   updateLoadingBar: () => void;
   setState: (state: 'exit' | 'prompt' | 'processing') => void;
+}
+
+interface Logger {
+  info: (message: any, ...args: any[]) => void;
 }
 
 export interface ExecuteWorkflowReq {
@@ -77,6 +82,12 @@ export class ExecuteWorkflow
   #solverAgent: SolverAgent | undefined;
 
   #plannerAgent: PlannerAgent | undefined;
+
+  #logger: Logger;
+
+  constructor(logger: Logger) {
+    this.#logger = logger;
+  }
 
   #chatWithLemonAgent = async (userMsg: string): Promise<void> => {
     if (!this.#plannerAgent) throw new Error('Missing Planner Agent');
@@ -98,7 +109,10 @@ export class ExecuteWorkflow
     await this.#processPlannerResponse(plannerResponse);
   };
 
-  #chatWithSolverAgent = async (toolId: string): Promise<void> => {
+  #chatWithSolverAgent = async (
+    toolId: string,
+    executionId: string
+  ): Promise<void> => {
     if (!this.#cli) throw new Error('Missing cli');
     if (!this.#solverAgent) throw new Error('Missing Solver Agent');
 
@@ -106,7 +120,7 @@ export class ExecuteWorkflow
       updateLoadingBarCallback: this.#cli.updateLoadingBar,
     });
 
-    await this.#processSolverResponse(solverResponse, toolId);
+    await this.#processSolverResponse(solverResponse, executionId, toolId);
   };
 
   #processUserMsg = (userMsg: string): void => {
@@ -267,6 +281,7 @@ export class ExecuteWorkflow
 
   #processSolverResponse = async (
     response: SolverResponse,
+    executionId: string,
     toolId?: string
   ): Promise<void> => {
     if (!this.#plannerAgent) throw new Error('Missig planner agent');
@@ -294,6 +309,10 @@ export class ExecuteWorkflow
 
         if (!resultValue) throw new Error('No result value available');
 
+        this.#logger.info(
+          JSON.stringify({ executionId, action: toolId || 'thinking' })
+        );
+
         this.#cli.writeSysMsg(
           `Tool execution result: ${JSON.stringify(resultValue)}`,
           {
@@ -316,7 +335,10 @@ export class ExecuteWorkflow
     }
   };
 
-  #solveWorkflowStep = async (toolId: string): Promise<void> => {
+  #solveWorkflowStep = async (
+    toolId: string,
+    executionId: string
+  ): Promise<void> => {
     if (!this.#plannerAgent) throw new Error('Missig planner agent');
     if (!this.#solverAgent) throw new Error('Missig solver agent');
     if (!this.#cli) throw new Error('Missing cli');
@@ -354,7 +376,7 @@ export class ExecuteWorkflow
       content: JSON.stringify(plannerToSolverMsg),
     });
 
-    await this.#chatWithSolverAgent(toolId);
+    await this.#chatWithSolverAgent(toolId, executionId);
   };
 
   #processPlannerResponse = async (
@@ -395,8 +417,9 @@ export class ExecuteWorkflow
 
         this.#cli.setState('processing');
 
+        const executionId = randomUUID();
         for (const toolId of idsOfSelectedTools)
-          await this.#solveWorkflowStep(toolId);
+          await this.#solveWorkflowStep(toolId, executionId);
 
         break;
       }

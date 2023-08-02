@@ -4,7 +4,7 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "preinstall": "pnpm dlx only-allow pnpm"
+    "preinstall": "pnpm exec only-allow pnpm"
   },
   "publishConfig": {
     "access": "public"
