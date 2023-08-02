@@ -50,7 +50,7 @@ Lemon Agent is a standalone supervised Plan and Solve Agent _(ACL 2023 Paper "[P
 
 ## 🏗️ Architecture
 
-A Lemon Agent session is initiated by the user. Via the UI the user then directly chats with the planner agent to define how to solve a given task. Once a solution was defined, the planner agent then starts communicating with the execution agent, which, finally, executes a given workflow step by making use of the multiple tools that are available to the Lemon Agent.
+A Lemon Agent session is initiated by the user. Via the UI the user then directly chats with the planner agent to define how to solve a given task. Once a solution was defined, the planner agent then starts communicating with the solver agent, which, finally, executes a given workflow step by making use of the multiple tools that are available to the Lemon Agent.
 
 ![Agent Architecture](public/lemon-agent-architecture.png)
 
@@ -96,16 +96,7 @@ To run the workflow above all you have to do is to tell the Lemon Agent to _'get
 
 ### 5. Gain transparency on your Agent's decision making
 
-To gain transparency on how your Agent interacts with Lemon AI tools to solve a given task, all decisions made, tools used and operations performed are written to a local `execution.log` file. Every time your LLM agent is interacting with the Lemon AI tool stack a corresponding log entry is created:
-
-```log
-2023-06-26T11:50:27.708785+0100 - b5f91c59-8487-45c2-800a-156eac0c7dae - hackernews-get-user
-2023-06-26T11:50:39.624035+0100 - b5f91c59-8487-45c2-800a-156eac0c7dae - airtable-append-data
-2023-06-26T11:58:32.925228+0100 - 5efe603c-9898-4143-b99a-55b50007ed9d - hackernews-get-user
-2023-06-26T11:58:43.988788+0100 - 5efe603c-9898-4143-b99a-55b50007ed9d - airtable-append-data
-```
-
-By using the analytics visualization you can easily gain a better understanding of how frequently and in which order tools are used. As a result, you can identify weak spots in your agent’s decision-making capabilities and move to a more deterministic behavior by further configuring your Lemon Agent workflows.
+By using the [analytics visualization](https://github.com/felixbrock/lemon-agent/blob/main/apps/analytics/README.md) you can easily gain a better understanding of how frequently and in which order tools are used. As a result, you can identify weak spots in your agent’s decision-making capabilities and move to a more deterministic behavior by further configuring your Lemon Agent workflows.
 
 ![Heatmap Example](public/heatmap-example.png)
 
