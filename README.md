@@ -71,7 +71,12 @@ A Lemon Agent session is initiated by the user. Via the UI the user then directl
 
 1. At the root of the project run `cp .env.example .env.development` to create a new env file.
 2. Store your OpenAI (as _AUTH_TOKEN_OPENAI_) and GitHub (as _AUTH_TOKEN_GITHUB_) auth token in _.env.development_.
+
+For Unix and Unix-like systems:
 3. At the root of the project run `pnpm dlx turbo dev` to start the Lemon Agent. In case this doesn't work for you run `pnpm dlx turbo build` at the root, run `cd apps/cli` to navigate to the project's cli client, and finally, run `pnpm run dev`.
+
+For Windows:
+3. At the root of the project run `pnpm dlx turbo dev-win` to start the Lemon Agent. In case this doesn't work for you run `pnpm dlx turbo build` at the root, run `cd apps/cli` to navigate to the project's cli client, and finally, run `pnpm run dev-win`.
 
 By now your Lemon Agent should be running and waiting for a task to solve.
 
