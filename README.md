@@ -40,7 +40,7 @@ Lemon Agent is a standalone supervised Plan and Solve Agent _(ACL 2023 Paper "[P
 
 - Lemon Agent is a standalone agent, but can easily be integrated into frameworks like LangChain and be used with any model.
 
-**Bonus:** Get a detailed understanding of how Lemon Agent interacts with your tools in each step using the [analytics visualization](#5-gain-transparency-on-your-agents-decision-making) (**.html file that can be run without any additional installation**)!
+**Bonus:** By using the [analytics visualization](https://github.com/felixbrock/lemon-agent/blob/main/apps/analytics/README.md) you can easily gain a better understanding of how frequently and in which order tools are used. As a result, you can identify weak spots in your agent’s decision-making capabilities and move to a more deterministic behavior by further configuring your Lemon Agent workflows. **(.html file that can be run without any additional installation)**
 
 <div align="center">
 <figure>
@@ -93,12 +93,6 @@ Similar to [OpenAI functions](https://openai.com/blog/function-calling-and-other
 ```
 
 To run the workflow above all you have to do is to tell the Lemon Agent to _'get information about a repository'_ and finally approve _'yes, do this for the repository lemon-agent and the owner felixbrock'_.
-
-### 5. Gain transparency on your Agent's decision making
-
-By using the [analytics visualization](https://github.com/felixbrock/lemon-agent/blob/main/apps/analytics/README.md) you can easily gain a better understanding of how frequently and in which order tools are used. As a result, you can identify weak spots in your agent’s decision-making capabilities and move to a more deterministic behavior by further configuring your Lemon Agent workflows.
-
-![Heatmap Example](public/heatmap-example.png)
 
 ## 🧩 Supported Tools
 
