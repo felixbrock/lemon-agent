@@ -48,6 +48,12 @@ Lemon Agent is a standalone supervised Plan and Solve Agent _(ACL 2023 Paper "[P
   </figure>
 </div>
 
+## 🏗️ Architecture
+
+A Lemon Agent session is initiated by the user. Via the UI the user then directly chats with the planner agent to define how to solve a given task. Once a solution was defined, the planner agent then starts communicating with the execution agent, which, finally, executes a given workflow step by making use of the multiple tools that are available to the Lemon Agent.
+
+![Agent Architecture](public/lemon-agent-architecture.png)
+
 ## ⚡️ Getting Started
 
 ### 1. Prerequisites
@@ -102,12 +108,6 @@ To gain transparency on how your Agent interacts with Lemon AI tools to solve a 
 By using the analytics visualization you can easily gain a better understanding of how frequently and in which order tools are used. As a result, you can identify weak spots in your agent’s decision-making capabilities and move to a more deterministic behavior by further configuring your Lemon Agent workflows.
 
 ![Heatmap Example](public/heatmap-example.png)
-
-## 🏗️ Architecture
-
-A Lemon Agent session is initiated by the user. Via the UI the user then directly chats with the planner agent to define how to solve a given task. Once a solution was defined, the planner agent then starts communicating with the execution agent, which, finally, executes a given workflow step by making use of the multiple tools that are available to the Lemon Agent.
-
-![Agent Architecture](public/lemon-agent-architecture.png)
 
 ## 🧩 Supported Tools
 
