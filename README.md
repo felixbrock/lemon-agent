@@ -26,19 +26,19 @@ Lemon Agent is a standalone supervised Plan and Solve Agent _(ACL 2023 Paper "[P
 
 🤝 **Separation of tasks and human-in-the-loop interactions**
 
-> Lemon Agent is currently holding a Planner Agent and a Solver Agent to keep the agents focussed and increase accuracy. We are planning on adding additional agents real soon. In addition, Lemon Agent will ask for approval at relevant workflow steps to make sure the intended actions are executed.
+- Lemon Agent is currently holding a Planner Agent and a Solver Agent to keep the agents focussed and increase accuracy. We are planning on adding additional agents real soon. In addition, Lemon Agent will ask for approval at relevant workflow steps to make sure the intended actions are executed.
 
 🌌 **Unlimited configuration options**
 
-> Lemon Agent gives you unlimited configuration options (see example here) when defining your workflow. For instance, you can tell Lemon Agent to ask for permission before executing a workflow step or to drop a 🧔‍♀️ dad joke every time the model executes a workflow step.
+- Lemon Agent gives you unlimited configuration options (see example here) when defining your workflow. For instance, you can tell Lemon Agent to ask for permission before executing a workflow step or to drop a 🧔‍♀️ dad joke every time the model executes a workflow step.
 
 👀 **UI flexibility**
 
-> Build any UI on top or engage with Lemon Agent via the built-in CLI.
+- Build any UI on top or engage with Lemon Agent via the built-in CLI.
 
 🎨 **[Soon] Model & framework agnostic operations**
 
-> Lemon Agent is a standalone agent, but can easily be integrated into frameworks like LangChain and be used with any model.
+- Lemon Agent is a standalone agent, but can easily be integrated into frameworks like LangChain and be used with any model.
 
 **Bonus:** Get a detailed understanding of how Lemon Agent interacts with your tools in each step using the [analytics visualization](#5-gain-transparency-on-your-agents-decision-making) (**.html file that can be run without any additional installation**)!
 
