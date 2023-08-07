@@ -136,13 +136,6 @@ Great to see you here! We are extremely open to contributions! You can find more
 
 > Those are the team members and people who actively help out improving the codebase by making PRs and reviewing code. We are beyond grateful for your help!
 
-<table cellspacing="0" cellpadding="0" style="border:none;">
-  <tbody>
-    <tr style="border:none;">
-      <td align="center" style="border:none;"><a href="https://twitter.com/felixbrockm"><img src="https://avatars.githubusercontent.com/u/70200999?s=100&v=4" width="70px;" alt="" style="border-radius: 50%;"/><br /><sub><b>Felix Brockmeier</b></sub></a></td>
-      <td align="center" style="border:none;"><a href="https://www.linkedin.com/in/mohammed-abdus-samad-hannan-3a2687202/"><img src="https://avatars.githubusercontent.com/u/72310364?s=100&v=4" width="70px;" alt="" style="border-radius: 50%;"/><br /><sub><b>Mohammed Hannan</b></sub></a></td>
-      <td align="center" style="border:none;"><a href="https://www.linkedin.com/in/haiphunghiem/"><img src="https://avatars.githubusercontent.com/u/16231195?s=100&v=4" width="70px;" alt="" style="border-radius: 50%;"/><br /><sub><b>Hai Nghiem</b></sub></a></td>
-      <td align="center" style="border:none;"><a href="https://twitter.com/schroeerclemens"><img src="https://avatars.githubusercontent.com/u/84038864?s=100&v=4" width="70px;" alt="" style="border-radius: 50%;"/><br /><sub><b>Clemens Schroeer</b></sub></a></td>
-    </tr>
-  </tbody>
-</table>
+<a href="https://github.com/felixbrock/lemon-agent/graphs/contributors">
+<img src="https://contrib.rocks/image?repo=felixbrock/lemon-agent" />
+</a>
