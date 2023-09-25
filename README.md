@@ -1,3 +1,5 @@
+> **Disclaimer**: This repo is currently not under active maintenance. Things might break unexpectedly!
+
 <div align="center">
   <h1>🍋 Lemon Agent</h1>
   <h3>When life gives you lemons, automate it using Lemon Agent 😎</h3>
